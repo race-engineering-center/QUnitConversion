@@ -20,9 +20,11 @@ include(QUnitConversion.pri)
 SOURCES += \
         main.cpp \
         tests/qaliasdictionarytests.cpp \
-        tests/qlinearfunctiontests.cpp
+        tests/qlinearfunctiontests.cpp \
+        tests/qunitconvertortests.cpp
 
 HEADERS += \
     tests/qaliasdictionarytests.h \
-    tests/qlinearfunctiontests.h
+    tests/qlinearfunctiontests.h \
+    tests/qunitconvertortests.h
 

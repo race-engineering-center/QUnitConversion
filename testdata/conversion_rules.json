@@ -1,0 +1,50 @@
+{
+    "rules": [
+        {
+            "family": "length",
+            "base": "m",
+            "conversions": [
+                {
+                    "unit": "mm",
+                    "k": 1000
+                },
+                {
+                    "unit": "cm",
+                    "k": 100
+                },
+                {
+                    "unit": "dm",
+                    "k": 10
+                },
+                {
+                    "unit": "km",
+                    "k": 0.001
+                },
+                {
+                    "unit": "ft",
+                    "k": 3.28084
+                },
+                {
+                    "unit": "mi",
+                    "k": 0.000621371
+                }
+            ]
+        },
+        {
+            "family": "temperature",
+            "base": "K",
+            "conversions": [
+                {
+                    "unit": "C",
+                    "k": 1,
+                    "b": 273.16
+                },
+                {
+                    "unit": "F",
+                    "k": 1.8,
+                    "b": -459.67
+                }
+            ]
+        }
+    ]
+}
