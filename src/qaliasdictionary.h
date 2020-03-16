@@ -25,6 +25,13 @@ public:
     QString name(const QString & alias) const;
 
     /**
+     * @brief Gets a list of aliases for a given name
+     * @param name name to get aliases
+     * @return QList<QString> containing aliases for a given name
+     */
+    QList<QString> aliases(const QString & name) const;
+
+    /**
      * @brief Checks if this dictionary is empty
      * @return true if empty, false otherwise
      */
@@ -36,6 +43,8 @@ public:
      * @param alias alias for the given name
      */
     void addAlias(const QString & name, const QString & alias);
+
+
 
 protected:
     QMap <QString, QString> m_aliases;
