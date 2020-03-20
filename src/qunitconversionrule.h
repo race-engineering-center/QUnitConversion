@@ -16,6 +16,16 @@ class QUnitConversionRule
 public:
     QUnitConversionRule();
 
+    QUnitConversionRule(const QString & family,
+                        const QString & baseUnit,
+                        const QString & unit,
+                        const QLinearFunction & convertFunction);
+
+    QUnitConversionRule(const QString & family,
+                        const QString & baseUnit,
+                        const QString & unit,
+                        double k, double b);
+
     QString family() const;
     void setFamily(const QString &family);
 

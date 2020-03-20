@@ -51,6 +51,8 @@ public:
     double b() const;
     void setB(double value);
 
+    static QLinearFunction combined(const QLinearFunction & first, const QLinearFunction & second);
+
 protected:
     double m_k;
     double m_b;

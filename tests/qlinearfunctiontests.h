@@ -15,7 +15,7 @@ private slots:
     void basisTests();
     void valueTest();
     void inversedTest();
-
+    void combinedTest();
 };
 
 #endif // QLINEARFUNCTIONTESTS_H

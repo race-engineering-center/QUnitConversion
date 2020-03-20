@@ -5,6 +5,23 @@ QUnitConversionRule::QUnitConversionRule()
 
 }
 
+QUnitConversionRule::QUnitConversionRule(const QString &family, const QString &baseUnit, const QString &unit, const QLinearFunction &convertFunction)
+{
+    m_family = family;
+    m_baseUnit = baseUnit;
+    m_unit = unit;
+    m_convertFunction = convertFunction;
+}
+
+QUnitConversionRule::QUnitConversionRule(const QString &family, const QString &baseUnit, const QString &unit, double k, double b)
+{
+    m_family = family;
+    m_baseUnit = baseUnit;
+    m_unit = unit;
+    m_convertFunction.setK(k);
+    m_convertFunction.setB(b);
+}
+
 QString QUnitConversionRule::family() const
 {
     return m_family;

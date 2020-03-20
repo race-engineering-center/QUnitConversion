@@ -19,8 +19,8 @@ bool QLinearFunction::isValid() const
 
 QLinearFunction QLinearFunction::inversed() const
 {
-    if (!isValid()) return QLinearFunction();
-    return QLinearFunction(1. / m_k, -m_b / m_k);
+    if (!isValid()) return {};
+    return {1. / m_k, -m_b / m_k};
 }
 
 double QLinearFunction::y(double x)
@@ -46,4 +46,9 @@ double QLinearFunction::b() const
 void QLinearFunction::setB(double value)
 {
     m_b = value;
+}
+
+QLinearFunction QLinearFunction::combined(const QLinearFunction &first, const QLinearFunction &second)
+{
+    return {first.k() * second.k(), second.k() * first.b() + second.b()};
 }
