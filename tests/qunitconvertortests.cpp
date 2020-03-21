@@ -70,7 +70,6 @@ void QUnitConvertorTests::addRuleTest()
     QVERIFY(families.contains("time"));
 
     QStringList units = convertor.units("length");
-    qDebug()<<units;
     QVERIFY(units.size() == 4);
     QVERIFY(units.contains("m"));
     QVERIFY(units.contains("km"));

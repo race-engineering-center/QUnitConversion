@@ -2,6 +2,9 @@
 #define QALIASDICTIONARY_H
 
 #include <QMap>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QDebug>
 
 /**
  * @brief The QAliasDictionary class provides
@@ -44,10 +47,22 @@ public:
      */
     void addAlias(const QString & name, const QString & alias);
 
+    /**
+     * @brief Checks if a dictionary contains name for the given alias
+     * @param alias alias to check existance
+     * @return true if a dictionary contains name for the given alias, false otherwise
+     */
+    bool contains(const QString & alias);
 
+    /**
+     * @brief Loads alias rules from JSON
+     * @param object object containing serialized dictionary
+     */
+    void loadFromJson(const QJsonObject & object);
 
 protected:
     QMap <QString, QString> m_aliases;
+    QSet <QString> m_names;
 };
 
 #endif // QALIASDICTIONARY_H

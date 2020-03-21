@@ -1,0 +1,12 @@
+{
+    "aliases": [
+        {
+            "name": "m",
+            "aliases": ["meter", "meters"]
+        },
+        {
+            "name": "km/h",
+            "aliases": ["kmph", "kmh"]
+        }
+    ]
+}
