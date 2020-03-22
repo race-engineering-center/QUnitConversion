@@ -9,6 +9,7 @@
 
 #include "qlinearfunction.h"
 #include "qunitconversionfamily.h"
+#include "qaliasdictionary.h"
 
 /**
  * @brief The QUnitConvertor class provides tool for converting units stored
@@ -47,6 +48,7 @@ public:
      * @param out unit to convert to
      * @param defaultValue value to return if conversion fails
      * @return value converted to out unit
+     * @details Supports aliases for unit names, see QAliasDictionary
      */
     double convert(double value, const QString & in, const QString & out, double defaultValue = NAN) const;
 
@@ -70,7 +72,8 @@ public:
     /**
      * @brief Adds a conversion rule to convertor
      * @param rule rule to add
-     * @details
+     * @details This function doesn't convert an alas for a unit to an actual unit name, so make sure to
+     * pass here an actual unit name
      * @throw std::invalid_argument if a passed rule has existing family with different base unit,
      * existing unit with different family or existing unit with a different family or base unit
      */
@@ -96,11 +99,22 @@ public:
      */
     QStringList units(const QString &family) const;
 
+    /**
+     * @brief Loads unit aliases from json serialized object
+     * @param object json-serialized aliases
+     */
+    void loadAliasesFromJson(const QJsonObject & object);
+
+    /**
+     * @brief Removes all alias rules
+     */
+    void clearAliases();
+
 protected:
     QMap <QString, QString> m_familiesByUnit;   ///< Key is a unit, Value is a corresponding family. Base units are also put here
     QMap <QString, QString> m_baseUnitsByFamilies;  ///< Key is a family name, Value is a corresponding base unit
     QMap <QString, QUnitConversionFamily> m_families;   ///< Key is a family name, Value is a family
-
+    QAliasDictionary m_aliases;
 };
 
 #endif // QUNITCONVERTOR_H

@@ -28,7 +28,7 @@ void QAliasDictionary::addAlias(const QString &name, const QString &alias)
     m_names.insert(name);
 }
 
-bool QAliasDictionary::contains(const QString &alias)
+bool QAliasDictionary::contains(const QString &alias) const
 {
     if (m_names.contains(alias))
         return true;
@@ -48,4 +48,10 @@ void QAliasDictionary::loadFromJson(const QJsonObject &object)
         for (const auto & alias: aliases)
             addAlias(name, alias.toString());
     }
+}
+
+void QAliasDictionary::clear()
+{
+    m_aliases.clear();
+    m_names.clear();
 }

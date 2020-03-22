@@ -52,13 +52,18 @@ public:
      * @param alias alias to check existance
      * @return true if a dictionary contains name for the given alias, false otherwise
      */
-    bool contains(const QString & alias);
+    bool contains(const QString & alias) const;
 
     /**
      * @brief Loads alias rules from JSON
      * @param object object containing serialized dictionary
      */
     void loadFromJson(const QJsonObject & object);
+
+    /**
+     * @brief Removes all alias-name from dictionary
+     */
+    void clear();
 
 protected:
     QMap <QString, QString> m_aliases;

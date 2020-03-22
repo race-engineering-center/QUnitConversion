@@ -87,18 +87,34 @@ void QUnitConvertorTests::addRuleTest()
 void QUnitConvertorTests::fromJsonTest()
 {
     QUnitConvertor convertor;
-    QFile file(QCoreApplication::applicationDirPath() + "/../testdata/conversion_rules.json");
-    QVERIFY(file.exists());
-    QVERIFY(file.open(QIODevice::ReadOnly));
-    QJsonObject object = QJsonDocument::fromJson(file.readAll()).object();
-    convertor.loadFromJson(object);
+    QFile conversions(QCoreApplication::applicationDirPath() + "/../testdata/conversion_rules.json");
+    QVERIFY(conversions.exists());
+    QVERIFY(conversions.open(QIODevice::ReadOnly));
+    convertor.loadFromJson(QJsonDocument::fromJson(conversions.readAll()).object());
 
+    QFile aliases(QCoreApplication::applicationDirPath() + "/../testdata/aliases.json");
+    QVERIFY(aliases.exists());
+    QVERIFY(aliases.open(QIODevice::ReadOnly));
+    convertor.loadAliasesFromJson(QJsonDocument::fromJson(aliases.readAll()).object());
+
+    // conversion to an actual unit
     QVERIFY(qFuzzyCompare(convertor.convert(0, "m", "km"), 0));
     QVERIFY(qFuzzyCompare(convertor.convert(50, "m", "km"), 0.05));
     QVERIFY(qFuzzyCompare(convertor.convert(50, "km", "m"), 50000));
     QVERIFY(qFuzzyCompare(convertor.convert(500, "cm", "m"), 5));
     QVERIFY(qFuzzyCompare(convertor.convert(500, "cm", "km"), 0.005));
 
+    QVERIFY(qFuzzyCompare(convertor.convert(50, "m/s", "km/h"), 180));
+    QVERIFY(qFuzzyCompare(convertor.convert(50, "m/s", "kmph"), 180));
+    QVERIFY(qFuzzyCompare(convertor.convert(50, "m/s", "kmh"), 180));
+    QVERIFY(qFuzzyCompare(convertor.convert(50, "mps", "km/h"), 180));
+    QVERIFY(qFuzzyCompare(convertor.convert(50, "mps", "kmph"), 180));
+    QVERIFY(qFuzzyCompare(convertor.convert(50, "mps", "kmh"), 180));
+
+    QVERIFY(qFuzzyCompare(convertor.convert(0, "meter", "km"), 0));
+    QVERIFY(qFuzzyCompare(convertor.convert(50, "meters", "km"), 0.05));
+
     QVERIFY(qFuzzyCompare(convertor.convert(100, "C", "K"), 373.15));
     QVERIFY(qFuzzyCompare(convertor.convert(-40, "C", "F"), -40));
 }
+

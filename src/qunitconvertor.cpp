@@ -14,11 +14,20 @@ QLinearFunction QUnitConvertor::convert(const QString &in, const QString &out) c
 {
     if (in == out)
         return {1, 0};
-    QString inFamily = m_familiesByUnit.value(in);
-    QString outFamily = m_familiesByUnit.value(out);
+    QString actualIn, actualOut;
+    if (m_aliases.contains(in))
+        actualIn = m_aliases.name(in);
+    else
+        actualIn = in;
+    if (m_aliases.contains(out))
+        actualOut = m_aliases.name(out);
+    else
+        actualOut = out;
+    QString inFamily = m_familiesByUnit.value(actualIn);
+    QString outFamily = m_familiesByUnit.value(actualOut);
     if (inFamily.isEmpty() || inFamily != outFamily)
         return {};
-    return m_families[inFamily].convert(in, out);
+    return m_families[inFamily].convert(actualIn, actualOut);
 }
 
 double QUnitConvertor::convert(double value, const QString &in, const QString &out, double defaultValue) const
@@ -100,4 +109,14 @@ QStringList QUnitConvertor::families() const
 QStringList QUnitConvertor::units(const QString &family) const
 {
     return m_familiesByUnit.keys(family);
+}
+
+void QUnitConvertor::loadAliasesFromJson(const QJsonObject &object)
+{
+    m_aliases.loadFromJson(object);
+}
+
+void QUnitConvertor::clearAliases()
+{
+    m_aliases.clear();
 }

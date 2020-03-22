@@ -11,7 +11,11 @@ an input JSON file is provided in `/testdata/conversion_rules.json`.
 
 Note that each unit should have a unique name, as long as conversion is unit name-based.
 
-## Example
+`QUnitConversion` supports aliases for unit names, see aliases example below.
+
+## Examples
+
+### Basic usage:
 
 ```cpp
 QUnitConvertor convertor;
@@ -31,6 +35,31 @@ std::vector<double> meters;
 std::vector<double> kilometers;
 for (double m: meters)
     kilometers.push_back(convertFunction.y(m));
+```
+
+### Aliases:
+
+`QUnitConversion` supports aliases for units with possible conversion on the fly, so you km/h, kmph and kmh 
+will be converted to m/s properly. Also this example illustrates loading conversions and aliases from
+JSON-formatted file.
+
+```cpp
+QUnitConvertor convertor;
+
+// load conversion rules from JSON
+QFile conversions("conversion_rules.json");
+conversions.open(QIODevice::ReadOnly);
+convertor.loadFromJson(QJsonDocument::fromJson(conversions.readAll()).object());
+
+// load aliases for unit names from JSON
+QFile aliases("aliases.json");
+aliases.open(QIODevice::ReadOnly);
+convertor.loadAliasesFromJson(QJsonDocument::fromJson(aliases.readAll()).object());
+
+double km;
+km = convertor.convert(50, "km", "m");   // returns value of a 50 km converted to meters
+km = convertor.convert(50, "km", "meter");  // "meter" is an alias for "m" written in loaded json
+km = convertor.convert(50, "km", "meters"); // and "meters" a as well
 ```
 
 ## License

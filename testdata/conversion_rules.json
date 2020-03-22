@@ -45,6 +45,20 @@
                     "b": -459.67
                 }
             ]
+        },
+        {
+            "family": "speed",
+            "base": "m/s",
+            "conversions": [
+                {
+                    "unit": "km/h",
+                    "k": 3.6
+                },
+                {
+                    "unit": "mph",
+                    "k": 2.23694
+                }
+            ]
         }
     ]
 }

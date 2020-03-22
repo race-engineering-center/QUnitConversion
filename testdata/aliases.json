@@ -7,6 +7,10 @@
         {
             "name": "km/h",
             "aliases": ["kmph", "kmh"]
+        },
+        {
+            "name": "m/s",
+            "aliases": ["mps"]
         }
     ]
 }
