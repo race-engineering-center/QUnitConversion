@@ -23,7 +23,7 @@ QLinearFunction QLinearFunction::inversed() const
     return {1. / m_k, -m_b / m_k};
 }
 
-double QLinearFunction::y(double x)
+double QLinearFunction::y(double x) const
 {
     return x * m_k + m_b;
 }

@@ -120,3 +120,8 @@ void QUnitConvertor::clearAliases()
 {
     m_aliases.clear();
 }
+
+QString QUnitConvertor::unitName(const QString &alias) const
+{
+    return m_aliases.name(alias);
+}

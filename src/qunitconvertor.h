@@ -110,6 +110,13 @@ public:
      */
     void clearAliases();
 
+    /**
+     * @brief Gets unit name by alias unsing internal alias dictionary
+     * @param alias unit alias to get unit name
+     * @return unit name or an empty string if a specified alias is not found
+     */
+    QString unitName(const QString & alias) const;
+
 protected:
     QMap <QString, QString> m_familiesByUnit;   ///< Key is a unit, Value is a corresponding family. Base units are also put here
     QMap <QString, QString> m_baseUnitsByFamilies;  ///< Key is a family name, Value is a corresponding base unit

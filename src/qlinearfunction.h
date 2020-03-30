@@ -42,7 +42,7 @@ public:
      * @param x function argument
      * @return value of a function with an argument `x`
      */
-    double y(double x);
+    double y(double x) const;
 
 
     double k() const;
