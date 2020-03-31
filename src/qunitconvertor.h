@@ -91,6 +91,14 @@ public:
     QStringList families() const;
 
     /**
+     * @brief Gets a list of units with a possible connection to/from a given unit
+     * @param unit unit to get a list of conversions
+     * @return QStringList with units with possible conversion to a given unit, including a given unit. If
+     * conversion to/from a given unit is unknown returns an empty list
+     */
+    QStringList conversions(const QString & unit) const;
+
+    /**
      * @brief Method provides access to a list of units in this convertor within a given
      * family, effectively providing a list of unit with a possible conversion from
      * any unit of this list to any other

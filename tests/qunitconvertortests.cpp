@@ -82,6 +82,23 @@ void QUnitConvertorTests::addRuleTest()
     QVERIFY(qFuzzyCompare(convertor.convert(500, "cm", "m"), 5));
     QVERIFY(qFuzzyCompare(convertor.convert(500, "cm", "km"), 0.005));
     QVERIFY(qFuzzyCompare(convertor.convert(500, "m", "m"), 500));
+
+    QStringList conversions = convertor.conversions("m");
+    QVERIFY(conversions.contains("m"));
+    QVERIFY(conversions.contains("km"));
+    QVERIFY(conversions.contains("cm"));
+    QVERIFY(conversions.contains("mm"));
+    QVERIFY(conversions.size() == 4);
+
+    conversions = convertor.conversions("mm");
+    QVERIFY(conversions.contains("m"));
+    QVERIFY(conversions.contains("km"));
+    QVERIFY(conversions.contains("cm"));
+    QVERIFY(conversions.contains("mm"));
+    QVERIFY(conversions.size() == 4);
+
+    conversions = convertor.conversions("mmmm");
+    QVERIFY(conversions.isEmpty());
 }
 
 void QUnitConvertorTests::fromJsonTest()

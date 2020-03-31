@@ -106,6 +106,17 @@ QStringList QUnitConvertor::families() const
     return m_families.keys();
 }
 
+QStringList QUnitConvertor::conversions(const QString &unit) const
+{
+    QString actualUnit;
+    if (m_aliases.contains(unit))
+        actualUnit = m_aliases.name(unit);
+    else
+        actualUnit = unit;
+    QString family = m_familiesByUnit.value(actualUnit);
+    return units(family);
+}
+
 QStringList QUnitConvertor::units(const QString &family) const
 {
     return m_familiesByUnit.keys(family);
