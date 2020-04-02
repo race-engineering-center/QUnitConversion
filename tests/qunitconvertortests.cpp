@@ -99,6 +99,11 @@ void QUnitConvertorTests::addRuleTest()
 
     conversions = convertor.conversions("mmmm");
     QVERIFY(conversions.isEmpty());
+
+    QVERIFY(convertor.family("m") == "length");
+    QVERIFY(convertor.family("km") == "length");
+    QVERIFY(convertor.family("mmmmm").isEmpty());
+
 }
 
 void QUnitConvertorTests::fromJsonTest()

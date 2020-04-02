@@ -91,6 +91,13 @@ public:
     QStringList families() const;
 
     /**
+     * @brief Gets a family for a given unit
+     * @param unit unit to return a family
+     * @return a family name or an empty string if unit is unknown to convertor
+     */
+    QString family(const QString & unit) const;
+
+    /**
      * @brief Gets a list of units with a possible connection to/from a given unit
      * @param unit unit to get a list of conversions
      * @return QStringList with units with possible conversion to a given unit, including a given unit. If
