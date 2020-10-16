@@ -2,7 +2,9 @@
 #define QUNITCONVERSIONFAMILY_H
 
 #include <QMap>
+
 #include <cmath>
+#include <stdexcept>
 
 #include "qunitconversionrule.h"
 

@@ -69,6 +69,7 @@ QJsonObject QUnitConvertor::toJson() const
 {
     // TODO implement
     Q_ASSERT_X(false, Q_FUNC_INFO, "Save to JSON is not yet implemented");
+    return {};
 }
 
 void QUnitConvertor::addConversionRule(const QUnitConversionRule &rule)
