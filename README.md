@@ -70,11 +70,6 @@ km = convertor.convert(50, "km", "meters"); // and "meters" a as well
 
 `QUnitConversion` is distributed under MIT license
 
-## Documentation
-
-Documentation can be generated using `doxygen`, doxyfile is provided inside a `src` folder and requires
-`dot` tool installed and added to PATH to generate graphs. 
-
 ## Repo contents
 
 | Directory     | Contents                       |
@@ -83,4 +78,4 @@ Documentation can be generated using `doxygen`, doxyfile is provided inside a `s
 | `./test`      | Unittest code.                 |
 | `./testdata`  | Unittest data.                 |
 
-Copyright Dmitriy Linev 2020
+Copyright Dmitriy Linev 2020-2021
