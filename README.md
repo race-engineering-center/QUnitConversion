@@ -13,6 +13,10 @@ Note that each unit should have a unique name, as long as conversion is unit nam
 
 `QUnitConversion` supports aliases for unit names, see aliases example below.
 
+## Documentation
+
+Documentation is available [here](https://beardedbeaver.github.io/QUnitConversion/index.html)
+
 ## Examples
 
 ### Basic usage:
