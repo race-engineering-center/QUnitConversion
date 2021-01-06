@@ -138,5 +138,14 @@ void QUnitConvertorTests::fromJsonTest()
 
     QVERIFY(qFuzzyCompare(convertor.convert(100, "C", "K"), 373.15));
     QVERIFY(qFuzzyCompare(convertor.convert(-40, "C", "F"), -40));
+
+    QVERIFY(convertor.family("m") == "length");
+    QVERIFY(convertor.family("km") == "length");
+
+    // should retreieve correct family for unit aliases as well
+    QVERIFY(convertor.family("meter") == "length");
+    QVERIFY(convertor.family("meters") == "length");
+
+    QVERIFY(convertor.family("mmmmm").isEmpty());
 }
 

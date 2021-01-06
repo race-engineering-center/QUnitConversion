@@ -49,7 +49,7 @@ public:
 
     /**
      * @brief Checks if a dictionary contains name for the given alias
-     * @param alias alias to check existance
+     * @param alias alias to check existence
      * @return true if a dictionary contains name for the given alias, false otherwise
      */
     bool contains(const QString & alias) const;

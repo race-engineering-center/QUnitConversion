@@ -109,18 +109,17 @@ QStringList QUnitConvertor::families() const
 
 QString QUnitConvertor::family(const QString &unit) const
 {
-    return m_familiesByUnit.value(unit);
-}
-
-QStringList QUnitConvertor::conversions(const QString &unit) const
-{
     QString actualUnit;
     if (m_aliases.contains(unit))
         actualUnit = m_aliases.name(unit);
     else
         actualUnit = unit;
-    QString family = m_familiesByUnit.value(actualUnit);
-    return units(family);
+    return m_familiesByUnit.value(actualUnit);
+}
+
+QStringList QUnitConvertor::conversions(const QString &unit) const
+{
+    return units(family(unit));
 }
 
 QStringList QUnitConvertor::units(const QString &family) const

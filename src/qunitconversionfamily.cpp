@@ -39,7 +39,7 @@ QLinearFunction QUnitConversionFamily::convert(const QString &in, const QString 
     // conversion from one unit to another through the base unit if possible
     QLinearFunction inToBase = m_rules[in].convertFunction().inversed();
     QLinearFunction baseToOut = m_rules[out].convertFunction();
-    if (!inToBase.isValid() || !baseToOut.isValid())    // one of the covnersions is not present
+    if (!inToBase.isValid() || !baseToOut.isValid())    // one of the conversions is not present
         return {};
     return QLinearFunction::combined(inToBase, baseToOut);
 }

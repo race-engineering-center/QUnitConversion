@@ -126,7 +126,7 @@ public:
     void clearAliases();
 
     /**
-     * @brief Gets unit name by alias unsing internal alias dictionary
+     * @brief Gets unit name by alias using internal alias dictionary
      * @param alias unit alias to get unit name
      * @return unit name or an empty string if a specified alias is not found
      */
