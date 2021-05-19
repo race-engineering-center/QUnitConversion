@@ -38,14 +38,14 @@ bool QAliasDictionary::contains(const QString &alias) const
 void QAliasDictionary::loadFromJson(const QJsonObject &object)
 {
     QJsonArray rules = object["aliases"].toArray();
-    for (const auto & r: rules)
+    for (const auto & r: qAsConst(rules))
     {
         QJsonObject rule = r.toObject();
         QString name = rule["name"].toString();
         if (name.isEmpty())
             continue;
         auto aliases = rule["aliases"].toArray();
-        for (const auto & alias: aliases)
+        for (const auto & alias: qAsConst(aliases))
             addAlias(name, alias.toString());
     }
 }

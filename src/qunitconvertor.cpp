@@ -41,13 +41,13 @@ double QUnitConvertor::convert(double value, const QString &in, const QString &o
 void QUnitConvertor::loadFromJson(const QJsonObject &json)
 {
     QJsonArray rules = json["rules"].toArray();
-    for (const auto & r: rules)
+    for (const auto & r: qAsConst(rules))
     {
         QJsonObject rule = r.toObject();
         QString baseUnit = rule["base"].toString();
         QString familyName = rule["family"].toString();
         QJsonArray conversions = rule["conversions"].toArray();
-        for (const auto & c: conversions)
+        for (const auto & c: qAsConst(conversions))
         {
             QJsonObject conversion = c.toObject();
             QString unit = conversion["unit"].toString();

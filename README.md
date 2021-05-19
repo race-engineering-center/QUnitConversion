@@ -2,9 +2,10 @@
 
 ## Overview
 
-`QUnitConversion` is a simple lightweight library providing tools for unit conversion built on top of Qt5 Framework.
+`QUnitConversion` is a simple lightweight library providing tools for runtime unit conversion built on top of Qt5 Framework.
 
-`QUnitConversion` stores units as strings grouped by "family" (for example length or temperature). Each family has its own base unit, conversion inside a family is performed by converting through base unit
+`QUnitConversion` stores units as strings grouped by "family" (for example length or temperature). 
+Each family has its own base unit, conversion inside a family is performed by converting through base unit
 providing conversion from any unit to any other unit in a family. Conversion rules can be added dynamically
 and/or loaded from JSON-formatted string so you can add your own conversions if needed. An example of 
 an input JSON file is provided in `/testdata/conversion_rules.json`.
