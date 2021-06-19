@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['y_116',['y',['../class_q_linear_function.html#a85b117962becd3c41d6df391c3a75a1d',1,'QLinearFunction']]]
+  ['unit_138',['unit',['../class_q_unit_conversion_rule.html#ab1a15580aacef830dcea9ec24791d67d',1,'QUnitConversionRule']]],
+  ['unitname_139',['unitName',['../class_q_unit_convertor.html#a5ee9a12820378e9aada3122663ff72bf',1,'QUnitConvertor']]],
+  ['units_140',['units',['../class_q_unit_convertor.html#af3ecd2dee38824bc944bce79d3b2ed9c',1,'QUnitConvertor']]]
 ];

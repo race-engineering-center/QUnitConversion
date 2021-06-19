@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QUnitConversion: src/qunitconvertor.h Source File</title>
+<title>QUnitConversion: src/QUnitConversion/qunitconvertor.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e2ebbd8902ff37d41e65dc9e1dcca04d.html">QUnitConversion</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -85,7 +85,7 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_q_unit_convertor.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_q_unit_convertor.html">QUnitConvertor</a></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_q_unit_convertor.html#a1f407847a5b78799e02a4982d0340aa3">   21</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_q_unit_convertor.html#a1f407847a5b78799e02a4982d0340aa3">QUnitConvertorTests</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_q_unit_convertor.html#a1f407847a5b78799e02a4982d0340aa3">   21</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_q_unit_convertor_tests.html">QUnitConvertorTests</a>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_q_unit_convertor.html#a516c0ca3212f3d548b35862d9c7f5eea">QUnitConvertor</a>();</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
@@ -130,7 +130,6 @@ $(function() {
 <div class="ttc" id="aclass_q_unit_conversion_rule_html"><div class="ttname"><a href="class_q_unit_conversion_rule.html">QUnitConversionRule</a></div><div class="ttdoc">The QUnitConversionRule class represents a unit conversion rule from base unit to second unit within ...</div><div class="ttdef"><b>Definition:</b> qunitconversionrule.h:15</div></div>
 <div class="ttc" id="aclass_q_unit_convertor_html"><div class="ttname"><a href="class_q_unit_convertor.html">QUnitConvertor</a></div><div class="ttdoc">The QUnitConvertor class provides tool for converting units stored in a string form....</div><div class="ttdef"><b>Definition:</b> qunitconvertor.h:20</div></div>
 <div class="ttc" id="aclass_q_unit_convertor_html_a02da9ad94faaa510c2347957a721e055"><div class="ttname"><a href="class_q_unit_convertor.html#a02da9ad94faaa510c2347957a721e055">QUnitConvertor::loadAliasesFromJson</a></div><div class="ttdeci">void loadAliasesFromJson(const QJsonObject &amp;object)</div><div class="ttdoc">Loads unit aliases from json serialized object.</div><div class="ttdef"><b>Definition:</b> qunitconvertor.cpp:130</div></div>
-<div class="ttc" id="aclass_q_unit_convertor_html_a1f407847a5b78799e02a4982d0340aa3"><div class="ttname"><a href="class_q_unit_convertor.html#a1f407847a5b78799e02a4982d0340aa3">QUnitConvertor::QUnitConvertorTests</a></div><div class="ttdeci">friend class QUnitConvertorTests</div><div class="ttdef"><b>Definition:</b> qunitconvertor.h:21</div></div>
 <div class="ttc" id="aclass_q_unit_convertor_html_a37c3ac957204c423e70add80949e6767"><div class="ttname"><a href="class_q_unit_convertor.html#a37c3ac957204c423e70add80949e6767">QUnitConvertor::m_aliases</a></div><div class="ttdeci">QAliasDictionary m_aliases</div><div class="ttdef"><b>Definition:</b> qunitconvertor.h:139</div></div>
 <div class="ttc" id="aclass_q_unit_convertor_html_a433f56e02b285daabedc08d4828e2edb"><div class="ttname"><a href="class_q_unit_convertor.html#a433f56e02b285daabedc08d4828e2edb">QUnitConvertor::addConversionRule</a></div><div class="ttdeci">void addConversionRule(const QUnitConversionRule &amp;rule)</div><div class="ttdoc">Adds a conversion rule to convertor.</div><div class="ttdef"><b>Definition:</b> qunitconvertor.cpp:75</div></div>
 <div class="ttc" id="aclass_q_unit_convertor_html_a4a4e38b6930b3a37e7ab3142f1947b41"><div class="ttname"><a href="class_q_unit_convertor.html#a4a4e38b6930b3a37e7ab3142f1947b41">QUnitConvertor::families</a></div><div class="ttdeci">QStringList families() const</div><div class="ttdoc">Method provides access to a list of families of units in this convertor.</div><div class="ttdef"><b>Definition:</b> qunitconvertor.cpp:105</div></div>
@@ -148,6 +147,7 @@ $(function() {
 <div class="ttc" id="aclass_q_unit_convertor_html_aed19fb54539f2ca4d32d4fd860671731"><div class="ttname"><a href="class_q_unit_convertor.html#aed19fb54539f2ca4d32d4fd860671731">QUnitConvertor::family</a></div><div class="ttdeci">QString family(const QString &amp;unit) const</div><div class="ttdoc">Gets a family for a given unit.</div><div class="ttdef"><b>Definition:</b> qunitconvertor.cpp:110</div></div>
 <div class="ttc" id="aclass_q_unit_convertor_html_af3ecd2dee38824bc944bce79d3b2ed9c"><div class="ttname"><a href="class_q_unit_convertor.html#af3ecd2dee38824bc944bce79d3b2ed9c">QUnitConvertor::units</a></div><div class="ttdeci">QStringList units(const QString &amp;family) const</div><div class="ttdoc">Method provides access to a list of units in this convertor within a given family,...</div><div class="ttdef"><b>Definition:</b> qunitconvertor.cpp:125</div></div>
 <div class="ttc" id="aclass_q_unit_convertor_html_af610e32a636574568bca8fec0e130db1"><div class="ttname"><a href="class_q_unit_convertor.html#af610e32a636574568bca8fec0e130db1">QUnitConvertor::loadFromJson</a></div><div class="ttdeci">void loadFromJson(const QJsonObject &amp;json)</div><div class="ttdoc">Deserializes unit conversion rules from JSON.</div><div class="ttdef"><b>Definition:</b> qunitconvertor.cpp:41</div></div>
+<div class="ttc" id="aclass_q_unit_convertor_tests_html"><div class="ttname"><a href="class_q_unit_convertor_tests.html">QUnitConvertorTests</a></div><div class="ttdef"><b>Definition:</b> qunitconvertortests.h:10</div></div>
 <div class="ttc" id="aqaliasdictionary_8h_html"><div class="ttname"><a href="qaliasdictionary_8h.html">qaliasdictionary.h</a></div></div>
 <div class="ttc" id="aqlinearfunction_8h_html"><div class="ttname"><a href="qlinearfunction_8h.html">qlinearfunction.h</a></div></div>
 <div class="ttc" id="aqunitconversionfamily_8h_html"><div class="ttname"><a href="qunitconversionfamily_8h.html">qunitconversionfamily.h</a></div></div>
