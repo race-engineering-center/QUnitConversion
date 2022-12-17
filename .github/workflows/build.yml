@@ -81,5 +81,6 @@ jobs:
     - name: Run tests
       run: |
         ls
-        cd build
+        cd ..
         ls
+        cd build
