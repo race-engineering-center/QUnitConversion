@@ -1,0 +1,84 @@
+name: Build with CMake
+
+on:
+  - pull_request
+  - workflow_dispatch
+
+env:
+  BUILD_TYPE: Release
+  CMAKE_VERSION: 3.19.8
+  NINJA_VERSION: 1.11.1
+
+jobs:
+  build:
+    name: "${{ matrix.config.name }} Qt ${{ matrix.qt-version }}"
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        qt-version: [6.2.4, 6.4.1]
+        config:
+        - {
+            name: "Ubuntu Latest GCC",
+            os: ubuntu-latest,
+            arch: gcc_64,
+            cc: "gcc", cxx: "g++"
+          }
+        - {
+            name: "Windows Latest MSVC",
+            os: windows-latest,
+            arch: win64_msvc2019_64,
+            is_msvc: true,
+            cc: "cl", cxx: "cl"
+          }
+        - {
+            name: "Windows Latest MinGW",
+            os: windows-latest,
+            arch: win64_mingw,
+            is_msvc: false,
+            cc: "gcc", cxx: "g++",
+          }
+        - {
+            name: "macOS Latest Clang",
+            os: macos-latest,
+            arch: clang_64,
+            cc: "clang", cxx: "clang++"
+          }
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Qt environment
+      uses: jurplel/install-qt-action@v3
+      with:
+        cache: true
+        version: ${{ matrix.qt-version }}
+        arch: ${{ matrix.config.arch }}
+
+    - name: Setup MSBuild
+      uses: ilammy/msvc-dev-cmd@v1
+      if: runner.os == 'Windows' && matrix.config.is_msvc == true
+
+    - name: Setup cmake
+      uses: jwlawson/actions-setup-cmake@v1.9
+      with:
+        cmake-version: ${{env.CMAKE_VERSION}}
+
+    - name: Setup Ninja
+      uses: ashutoshvarma/setup-ninja@v1.1
+      with:
+        version: ${{env.NINJA_VERSION}}
+
+    - name: Build with CMake
+      uses: ashutoshvarma/action-cmake-build@master
+      with:
+        build-dir: ${{ runner.workspace }}/build
+        cc: ${{ matrix.config.cc }}
+        cxx: ${{ matrix.config.cxx }}
+        configure-options: -G Ninja
+        build-type: Release
+
+    - name: Run tests
+      run: |
+        cd ../build/tests
+        ./QUnitConversionTests
