@@ -47,7 +47,7 @@ jobs:
           }
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Install Python 3.7
       uses: actions/setup-python@v1
@@ -62,7 +62,7 @@ jobs:
         key: Qt-${{ matrix.config.os }}-${{ matrix.qt_version }}-${{ matrix.config.arch }}
 
     - name: Set up Qt environment
-      uses: jurplel/install-qt-action@v2
+      uses: jurplel/install-qt-action@v3
       with:
         cached: ${{ steps.cache-qt.outputs.cache-hit }}
         version: ${{ matrix.qt_version }}
