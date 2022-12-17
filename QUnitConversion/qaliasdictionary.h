@@ -18,7 +18,7 @@ public:
     /**
      * @brief Default constructor
      */
-    QAliasDictionary();
+    QAliasDictionary() = default;
 
     /**
      * @brief Gets name by alias

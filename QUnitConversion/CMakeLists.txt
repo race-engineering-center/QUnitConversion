@@ -37,6 +37,6 @@ target_include_directories(QUnitConversion PUBLIC
     .
 )
 
-target_link_libraries(QUnitConversion PRIVATE 
+target_link_libraries(QUnitConversion PUBLIC
     Qt::Core
 )

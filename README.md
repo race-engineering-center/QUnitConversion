@@ -8,7 +8,7 @@
 Each family has its own base unit, conversion inside a family is performed by converting through base unit
 providing conversion from any unit to any other unit in a family. Conversion rules can be added dynamically
 and/or loaded from JSON-formatted string so you can add your own conversions if needed. An example of 
-an input JSON file is provided in `/testdata/conversion_rules.json`.
+an input JSON file is provided in `test/testdata/conversion_rules.json`.
 
 Note that each unit should have a unique name, as long as conversion is unit name-based.
 
@@ -73,10 +73,9 @@ km = convertor.convert(50, "km", "meters"); // and "meters" a as well
 
 ## Repo contents
 
-| Directory     | Contents                       |
-|---------------|--------------------------------|
-| `./src`       | Source code.                   |
-| `./test`      | Unittest code.                 |
-| `./testdata`  | Unittest data.                 |
+| Directory           | Contents                       |
+|---------------------|--------------------------------|
+| `./QUnitConversion` | Library source code.           |
+| `./tests`           | Unittests code.                |
 
-Copyright Dmitriy Linev 2020-2021
+Copyright Dmitriy Linev 2020-2022

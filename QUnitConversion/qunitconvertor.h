@@ -23,7 +23,7 @@ public:
     /**
      * @brief Default constructor
      */
-    QUnitConvertor();
+    QUnitConvertor() = default;
 
     /**
      * @brief Checks if unit conversion from in unit to out unit is possible

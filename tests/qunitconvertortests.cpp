@@ -109,12 +109,12 @@ void QUnitConvertorTests::addRuleTest()
 void QUnitConvertorTests::fromJsonTest()
 {
     QUnitConvertor convertor;
-    QFile conversions(QCoreApplication::applicationDirPath() + "/../testdata/conversion_rules.json");
+    QFile conversions(":testdata/conversion_rules.json");
     QVERIFY(conversions.exists());
     QVERIFY(conversions.open(QIODevice::ReadOnly));
     convertor.loadFromJson(QJsonDocument::fromJson(conversions.readAll()).object());
 
-    QFile aliases(QCoreApplication::applicationDirPath() + "/../testdata/aliases.json");
+    QFile aliases(":testdata/aliases.json");
     QVERIFY(aliases.exists());
     QVERIFY(aliases.open(QIODevice::ReadOnly));
     convertor.loadAliasesFromJson(QJsonDocument::fromJson(aliases.readAll()).object());

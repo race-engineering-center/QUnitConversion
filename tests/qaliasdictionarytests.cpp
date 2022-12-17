@@ -35,7 +35,7 @@ void QAliasDictionaryTests::basicTests()
 void QAliasDictionaryTests::fromJsonTests()
 {
     QAliasDictionary dictionary;
-    QFile file(QCoreApplication::applicationDirPath() + "/../testdata/aliases.json");
+    QFile file(":testdata/aliases.json");
     QVERIFY(file.exists());
     QVERIFY(file.open(QIODevice::ReadOnly));
 
