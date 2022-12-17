@@ -15,7 +15,7 @@
 class QUnitConversionFamily
 {
 public:
-    QUnitConversionFamily();
+    QUnitConversionFamily() = default;
     QUnitConversionFamily(const QString & familyName, const QString & baseUnit);
 
     /**

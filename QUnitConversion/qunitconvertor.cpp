@@ -1,10 +1,5 @@
 #include "qunitconvertor.h"
 
-QUnitConvertor::QUnitConvertor()
-{
-
-}
-
 bool QUnitConvertor::canConvert(const QString &in, const QString &out) const
 {
     return convert(in, out).isValid();

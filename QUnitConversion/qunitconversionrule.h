@@ -14,7 +14,7 @@
 class QUnitConversionRule
 {
 public:
-    QUnitConversionRule();
+    QUnitConversionRule() = default;
 
     QUnitConversionRule(const QString & family,
                         const QString & baseUnit,

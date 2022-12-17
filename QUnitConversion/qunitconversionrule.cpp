@@ -1,10 +1,5 @@
 #include "qunitconversionrule.h"
 
-QUnitConversionRule::QUnitConversionRule()
-{
-
-}
-
 QUnitConversionRule::QUnitConversionRule(const QString &family, const QString &baseUnit, const QString &unit, const QLinearFunction &convertFunction)
 {
     m_family = family;

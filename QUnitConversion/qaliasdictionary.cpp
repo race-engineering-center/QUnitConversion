@@ -1,10 +1,5 @@
 #include "qaliasdictionary.h"
 
-QAliasDictionary::QAliasDictionary()
-{
-
-}
-
 QString QAliasDictionary::name(const QString &alias) const
 {
     if (m_names.contains(alias))

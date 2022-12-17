@@ -1,10 +1,5 @@
 #include "qunitconversionfamily.h"
 
-QUnitConversionFamily::QUnitConversionFamily()
-{
-
-}
-
 QUnitConversionFamily::QUnitConversionFamily(const QString &familyName, const QString &baseUnit)
 {
     m_family = familyName;
