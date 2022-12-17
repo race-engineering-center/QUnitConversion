@@ -25,7 +25,7 @@ jobs:
             arch: x86_64,
             cc: "gcc", cxx: "g++"
           }
-          - {
+        - {
             name: "Windows Latest MSVC", artifact: "Windows-MSVC",
             os: windows-latest,
             arch: win64_msvc2019_64,
