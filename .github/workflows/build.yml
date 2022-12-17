@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        qt_version: [5.12.2, 6.4.0]
+        qt_version: [5.12.2, 6.2.1]
         config:
         - {
             name: "Ubuntu Latest GCC", artifact: "Linux",
@@ -49,11 +49,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Install Python 3.7
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.7
-
     - name: Restore Qt from cache
       id: cache-qt
       uses: actions/cache@v1
@@ -64,7 +59,7 @@ jobs:
     - name: Set up Qt environment
       uses: jurplel/install-qt-action@v3
       with:
-        cached: ${{ steps.cache-qt.outputs.cache-hit }}
+        cache: true
         version: ${{ matrix.qt_version }}
         arch: ${{ matrix.config.arch }}
 
