@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        qt-version: [5.15.2, 6.2.4, 6.4.1]
+        qt-version: [6.2.4, 6.4.1]
         config:
         - {
             name: "Ubuntu Latest GCC",
@@ -35,7 +35,6 @@ jobs:
             name: "Windows Latest MinGW",
             os: windows-latest,
             arch: win64_mingw,
-            arch-old: win64_mingw81,
             is_msvc: false,
             cc: "gcc", cxx: "g++",
           }
@@ -54,7 +53,7 @@ jobs:
       with:
         cache: true
         version: ${{ matrix.qt-version }}
-        arch: ${{ if(startsWith(matrix.qt-version, 5) && startsWith(matrix.os, windows) && !matrix.is_msvc) }} matrix.arch-old ${{ else }} matrix.arch ${{ endif }}
+        arch: ${{ matrix.arch }}
 
     - name: Setup MSBuild
       uses: ilammy/msvc-dev-cmd@v1
