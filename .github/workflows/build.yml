@@ -35,7 +35,7 @@ jobs:
             name: "Windows Latest MinGW",
             os: windows-latest,
             arch: win64_mingw,
-            arch-old: win64_mingw81
+            arch-old: win64_mingw81,
             is_msvc: false,
             cc: "gcc", cxx: "g++",
           }
