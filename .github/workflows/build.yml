@@ -11,12 +11,12 @@ env:
 
 jobs:
   build:
-    name: "${{ matrix.config.name }} Qt ${{ matrix.qt_version }}"
+    name: "${{ matrix.config.name }} Qt ${{ matrix.qt-version }}"
     runs-on: ${{ matrix.config.os }}
     strategy:
       fail-fast: false
       matrix:
-        qt_version: [6.2.4, 6.4.1]
+        qt-version: [5.15.2, 6.2.4, 6.4.1]
         config:
         - {
             name: "Ubuntu Latest GCC",
@@ -35,6 +35,7 @@ jobs:
             name: "Windows Latest MinGW",
             os: windows-latest,
             arch: win64_mingw,
+            arch-old: win64_mingw81
             is_msvc: false,
             cc: "gcc", cxx: "g++",
           }
@@ -52,8 +53,8 @@ jobs:
       uses: jurplel/install-qt-action@v3
       with:
         cache: true
-        version: ${{ matrix.qt_version }}
-        arch: ${{ matrix.config.arch }}
+        version: ${{ matrix.qt-version }}
+        arch: ${{ if(startsWith(matrix.qt-version, 5) && startsWith(matrix.os, windows) && !matrix.is_msvc) }} matrix.arch-old ${{ else }} matrix.arch ${{ endif }}
 
     - name: Setup MSBuild
       uses: ilammy/msvc-dev-cmd@v1
