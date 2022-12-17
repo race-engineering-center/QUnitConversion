@@ -18,22 +18,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        qt_version: [5.15.2, 6.2.1, 6.4.0]
+        qt_version: [6.4.0]
         config:
-        - {
-            name: "Windows Latest MSVC", artifact: "Windows-MSVC",
-            os: windows-latest,
-            arch: win64_msvc2019_64,
-            is_msvc: true,
-            cc: "cl", cxx: "cl"
-          }
-        - {
-            name: "Windows Latest MinGW", artifact: "Windows-MinGW",
-            os: windows-latest,
-            arch: win64_mingw81,
-            is_msvc: false,
-            cc: "gcc", cxx: "g++",
-          }
         - {
             name: "Ubuntu Latest GCC", artifact: "Linux",
             os: ubuntu-latest,
@@ -95,5 +81,5 @@ jobs:
 
     - name: Run tests
       run: |
-        cd ../build/QUnitConversionTests
+        cd ../build/tests/QUnitConversionTests
         ./QUnitConversionTests
