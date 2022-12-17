@@ -53,7 +53,7 @@ jobs:
       with:
         cache: true
         version: ${{ matrix.qt-version }}
-        arch: ${{ matrix.arch }}
+        arch: ${{ matrix.config.arch }}
 
     - name: Setup MSBuild
       uses: ilammy/msvc-dev-cmd@v1
