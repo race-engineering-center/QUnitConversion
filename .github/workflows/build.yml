@@ -22,7 +22,7 @@ jobs:
         - {
             name: "Ubuntu Latest GCC", artifact: "Linux",
             os: ubuntu-latest,
-            arch: x86_64,
+            arch: gcc_64,
             cc: "gcc", cxx: "g++"
           }
         - {
@@ -42,7 +42,7 @@ jobs:
         - {
             name: "macOS Latest Clang", artifact: "macOS",
             os: macos-latest,
-            arch: x86_64,
+            arch: clang_64,
             cc: "clang", cxx: "clang++"
           }
 
