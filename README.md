@@ -73,10 +73,10 @@ km = convertor.convert(50, "km", "meters"); // and "meters" a as well
 
 ## Repo contents
 
-| Directory     | Contents                       |
-|---------------|--------------------------------|
-| `./src`       | Source code.                   |
-| `./test`      | Unittest code.                 |
-| `./testdata`  | Unittest data.                 |
+| Directory           | Contents                       |
+|---------------------|--------------------------------|
+| `./QUnitConversion` | Library source code.           |
+| `./tests`           | Unittests code.                |
+| `./testdata`        | Unittests data.                |
 
 Copyright Dmitriy Linev 2020-2021
