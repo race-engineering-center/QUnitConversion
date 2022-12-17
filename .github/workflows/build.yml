@@ -1,7 +1,9 @@
 name: build
 
 on:
-  - push
+  - push:
+    branches:
+      - 'master'
   - pull_request
   - workflow_dispatch
 
@@ -81,5 +83,6 @@ jobs:
 
     - name: Run tests
       run: |
-        cd build/tests/QUnitConversionTests
-        ./QUnitConversionTests
+        ls
+        cd build
+        ls
