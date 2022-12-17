@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        qt_version: [6.2.1, 6.4.1]
+        qt_version: [6.2.4, 6.4.1]
         config:
         - {
             name: "Ubuntu Latest GCC",
