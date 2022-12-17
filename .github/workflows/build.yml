@@ -1,0 +1,99 @@
+name: build
+
+on:
+  - push
+  - pull_request
+  - workflow_dispatch
+
+env:
+  BUILD_TYPE: Release
+  CMAKE_VERSION: 3.19.8
+  NINJA_VERSION: 1.10.1
+  CCACHE_VERSION: 3.7.7
+
+jobs:
+  build:
+    name: "${{ matrix.config.name }} Qt ${{ matrix.qt_version }}"
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        qt_version: [5.15.2, 6.2.1, 6.4.0]
+        config:
+        - {
+            name: "Windows Latest MSVC", artifact: "Windows-MSVC",
+            os: windows-latest,
+            arch: win64_msvc2019_64,
+            is_msvc: true,
+            cc: "cl", cxx: "cl"
+          }
+        - {
+            name: "Windows Latest MinGW", artifact: "Windows-MinGW",
+            os: windows-latest,
+            arch: win64_mingw81,
+            is_msvc: false,
+            cc: "gcc", cxx: "g++",
+          }
+        - {
+            name: "Ubuntu Latest GCC", artifact: "Linux",
+            os: ubuntu-latest,
+            arch: x86_64,
+            cc: "gcc", cxx: "g++"
+          }
+        - {
+            name: "macOS Latest Clang", artifact: "macOS",
+            os: macos-latest,
+            arch: x86_64,
+            cc: "clang", cxx: "clang++"
+          }
+
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+
+    - name: Restore Qt from cache
+      id: cache-qt
+      uses: actions/cache@v1
+      with:
+        path: ../Qt
+        key: Qt-${{ matrix.config.os }}-${{ matrix.qt_version }}-${{ matrix.config.arch }}
+
+    - name: Set up Qt environment
+      uses: jurplel/install-qt-action@v2
+      with:
+        cached: ${{ steps.cache-qt.outputs.cache-hit }}
+        version: ${{ matrix.qt_version }}
+        arch: ${{ matrix.config.arch }}
+
+    - name: Setup MSBuild
+      uses: ilammy/msvc-dev-cmd@v1
+      if: runner.os == 'Windows' && matrix.config.is_msvc == true
+
+    - name: Setup cmake
+      uses: jwlawson/actions-setup-cmake@v1.9
+      with:
+        cmake-version: ${{env.CMAKE_VERSION}}
+
+    - name: Setup Ninja
+      uses: ashutoshvarma/setup-ninja@v1.1
+      with:
+        version: ${{env.NINJA_VERSION}}
+
+    - name: Build with CMake
+      uses: ashutoshvarma/action-cmake-build@master
+      with:
+        build-dir: ${{ runner.workspace }}/build
+        cc: ${{ matrix.config.cc }}
+        cxx: ${{ matrix.config.cxx }}
+        configure-options: -G Ninja
+        build-type: Release
+
+    - name: Run tests
+      run: |
+        cd ../build/QUnitConversionTests
+        ./QUnitConversionTests
