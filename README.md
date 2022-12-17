@@ -77,6 +77,5 @@ km = convertor.convert(50, "km", "meters"); // and "meters" a as well
 |---------------------|--------------------------------|
 | `./QUnitConversion` | Library source code.           |
 | `./tests`           | Unittests code.                |
-| `./testdata`        | Unittests data.                |
 
-Copyright Dmitriy Linev 2020-2021
+Copyright Dmitriy Linev 2020-2022

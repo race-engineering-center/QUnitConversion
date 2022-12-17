@@ -2,9 +2,9 @@
 
 #include "iostream"
 
-#include "tests/qlinearfunctiontests.h"
-#include "tests/qaliasdictionarytests.h"
-#include "tests/qunitconvertortests.h"
+#include "qlinearfunctiontests.h"
+#include "qaliasdictionarytests.h"
+#include "qunitconvertortests.h"
 
 #define RUN_TESTS(x) {x member; result += QTest::qExec(&member, argc, argv); std::cout << std::endl; QThread::msleep(100); }
 
