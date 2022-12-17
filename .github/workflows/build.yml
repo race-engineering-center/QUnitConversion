@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        qt_version: [5.12.2, 6.2.1]
+        qt_version: [5.15.2, 6.2.1]
         config:
         - {
             name: "Ubuntu Latest GCC", artifact: "Linux",
@@ -48,13 +48,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
-    - name: Restore Qt from cache
-      id: cache-qt
-      uses: actions/cache@v1
-      with:
-        path: ../Qt
-        key: Qt-${{ matrix.config.os }}-${{ matrix.qt_version }}-${{ matrix.config.arch }}
 
     - name: Set up Qt environment
       uses: jurplel/install-qt-action@v3
