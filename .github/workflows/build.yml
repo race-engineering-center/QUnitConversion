@@ -25,13 +25,6 @@ jobs:
             arch: x86_64,
             cc: "gcc", cxx: "g++"
           }
-        - {
-            name: "macOS Latest Clang", artifact: "macOS",
-            os: macos-latest,
-            arch: x86_64,
-            cc: "clang", cxx: "clang++"
-          }
-
 
     steps:
     - uses: actions/checkout@v2
@@ -80,7 +73,5 @@ jobs:
 
     - name: Run tests
       run: |
+        cd ../build
         ls
-        cd ..
-        ls
-        cd build
