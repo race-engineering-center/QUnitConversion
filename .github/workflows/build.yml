@@ -81,5 +81,5 @@ jobs:
 
     - name: Run tests
       run: |
-        cd ../build/tests/QUnitConversionTests
+        cd build/tests/QUnitConversionTests
         ./QUnitConversionTests
