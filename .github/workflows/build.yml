@@ -17,13 +17,33 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        qt_version: [6.4.0]
+        qt_version: [5.12.2, 6.4.0]
         config:
         - {
             name: "Ubuntu Latest GCC", artifact: "Linux",
             os: ubuntu-latest,
             arch: x86_64,
             cc: "gcc", cxx: "g++"
+          }
+          - {
+            name: "Windows Latest MSVC", artifact: "Windows-MSVC",
+            os: windows-latest,
+            arch: win64_msvc2019_64,
+            is_msvc: true,
+            cc: "cl", cxx: "cl"
+          }
+        - {
+            name: "Windows Latest MinGW", artifact: "Windows-MinGW",
+            os: windows-latest,
+            arch: win64_mingw81,
+            is_msvc: false,
+            cc: "gcc", cxx: "g++",
+          }
+        - {
+            name: "macOS Latest Clang", artifact: "macOS",
+            os: macos-latest,
+            arch: x86_64,
+            cc: "clang", cxx: "clang++"
           }
 
     steps:
