@@ -4,4 +4,9 @@ project(QUnitConversion)
 set(CMAKE_CXX_STANDARD 17)
 
 add_subdirectory(QUnitConversion)
-add_subdirectory(tests)
+
+option(QUNITCONV_BUILD_TESTS "Build QUnitConversion unttests" On)
+
+if (QUNITCONV_BUILD_TESTS)
+    add_subdirectory(tests)
+endif()
