@@ -35,10 +35,10 @@ void QUnitConvertorTests::addRuleTest()
     QVERIFY(convertor.m_baseUnitsByFamilies.size() == 1);
 
     // passing existing family with a differnt base unit
-    QVERIFY_EXCEPTION_THROWN(convertor.addConversionRule(QUnitConversionRule("length", "km", "m", 1000, 0)), std::invalid_argument);
+    QVERIFY_THROWS_EXCEPTION(std::invalid_argument, convertor.addConversionRule(QUnitConversionRule("length", "km", "m", 1000, 0)));
 
     // passing a different family with an existing base unit
-    QVERIFY_EXCEPTION_THROWN(convertor.addConversionRule(QUnitConversionRule("notlength", "m", "km", 0.001, 0)), std::invalid_argument);
+    QVERIFY_THROWS_EXCEPTION(std::invalid_argument, convertor.addConversionRule(QUnitConversionRule("notlength", "m", "km", 0.001, 0)));
 
     // passing the same conversion once again should work
     convertor.addConversionRule(QUnitConversionRule("length", "m", "mm", 1000, 0));
