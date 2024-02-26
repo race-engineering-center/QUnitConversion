@@ -12,6 +12,7 @@ set(CMAKE_AUTORCC On)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Test REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Test REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS Test)
 
 set(SOURCES
         main.cpp
@@ -35,5 +36,6 @@ add_executable(QUnitConversionTests
 target_link_libraries(QUnitConversionTests
         Qt::Core
         Qt::Test
+        Qt6::Test
         QUnitConversion
         )
