@@ -2,7 +2,6 @@
 #define QLINEARFUNCTIONTESTS_H
 
 #include <QtTest>
-#include <QTest>
 
 #include "qlinearfunction.h"
 
