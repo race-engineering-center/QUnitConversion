@@ -59,7 +59,7 @@ var menudata={children:[
 {text:"u",url:"functions_func.html#index_u"},
 {text:"y",url:"functions_func.html#index_y"}]},
 {text:"Variables",url:"functions_vars.html"},
-{text:"Related Functions",url:"functions_rela.html"}]}]},
+{text:"Related Symbols",url:"functions_rela.html"}]}]},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},
 {text:"File Members",url:"globals.html",children:[
