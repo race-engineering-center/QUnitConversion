@@ -6,7 +6,7 @@ on:
 
 env:
   BUILD_TYPE: Release
-  CMAKE_VERSION: 3.19.8
+  CMAKE_VERSION: 3.21
   NINJA_VERSION: 1.11.1
 
 jobs:
