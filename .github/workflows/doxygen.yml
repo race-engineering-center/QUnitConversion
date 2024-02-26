@@ -7,7 +7,8 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  if_merged:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
@@ -16,8 +17,8 @@ jobs:
       uses: mattnotmitt/doxygen-action@v1
       with:
         doxyfile-path: "./doxyfile"
-        working-directory: "." 
-    
+        working-directory: "."
+
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
