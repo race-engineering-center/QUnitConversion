@@ -6,7 +6,7 @@ on:
 
 env:
   BUILD_TYPE: Release
-  CMAKE_VERSION: 3.19.8
+  CMAKE_VERSION: 3.21
   NINJA_VERSION: 1.11.1
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        qt-version: [6.2.4, 6.4.1]
+        qt-version: [6.3]
         config:
         - {
             name: "Ubuntu Latest GCC",
