@@ -7,7 +7,7 @@ QAliasDictionaryTests::QAliasDictionaryTests(QObject *parent) : QObject(parent)
 
 void QAliasDictionaryTests::basicTests()
 {
-    QAliasDictionary dictionary;
+    QAliasDictionary<QMap, QSet> dictionary;
     QVERIFY(dictionary.isEmpty());
     dictionary.addAlias("name", "alias");
     dictionary.addAlias("name", "alias2");
@@ -34,7 +34,7 @@ void QAliasDictionaryTests::basicTests()
 
 void QAliasDictionaryTests::fromJsonTests()
 {
-    QAliasDictionary dictionary;
+    QAliasDictionary<QMap, QSet> dictionary;
     QFile file(":testdata/aliases.json");
     QVERIFY(file.exists());
     QVERIFY(file.open(QIODevice::ReadOnly));
