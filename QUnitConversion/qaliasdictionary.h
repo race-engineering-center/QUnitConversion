@@ -12,7 +12,7 @@
  * conversion of unit name aliases such as
  * km/h -> kmph, kmh etc.
  */
-template<template<class, class> class Map, template<class> class Set>
+template<template<class...> class Map, template<class...> class Set>
 class QAliasDictionary
 {
 public:
