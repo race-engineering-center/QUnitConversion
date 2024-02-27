@@ -51,7 +51,7 @@ public:
      */
     void addAlias(const QString &name, const QString &alias)
     {
-        m_aliases.insert(alias, name);
+        m_aliases[alias] = name;
         m_names.insert(name);
     }
     /**
