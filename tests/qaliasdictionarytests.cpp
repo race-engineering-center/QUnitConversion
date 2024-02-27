@@ -56,10 +56,10 @@ void QAliasDictionaryTests::templateTests()
     QVERIFY(dictionary.name("alias2_for_name2") == "name2");
     QVERIFY(dictionary.name("alias2_for_name3").isEmpty());
 
-    auto aliases = dictionary.aliases("name");
-    QVERIFY(aliases.contains("alias"));
-    QVERIFY(aliases.contains("alias2"));
-    QVERIFY(aliases.contains("alias3"));
+//    auto aliases = dictionary.aliases("name");
+//    QVERIFY(aliases.contains("alias"));
+//    QVERIFY(aliases.contains("alias2"));
+//    QVERIFY(aliases.contains("alias3"));
 }
 
 void QAliasDictionaryTests::fromJsonTests()

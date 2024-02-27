@@ -23,10 +23,15 @@ public:
      */
     QString name(const QString &alias) const
     {
-        if (m_names.contains(alias))
+        if (m_names.find(alias) != m_names.end())
             return alias;
-        return m_aliases.value(alias);
+        auto it = m_aliases.find(alias);
+        if (it == m_aliases.end())
+            return {};
+
+        return m_aliases[alias];
     }
+
     /**
      * @brief Gets a list of aliases for a given name
      * @param name name to get aliases
@@ -93,7 +98,7 @@ public:
     }
 
 protected:
-    Map<QString, QString> m_aliases;
+    mutable Map<QString, QString> m_aliases;
     Set<QString> m_names;
 };
 
