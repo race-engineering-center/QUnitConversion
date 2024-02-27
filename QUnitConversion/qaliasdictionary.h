@@ -42,7 +42,7 @@ public:
      */
     bool isEmpty() const
     {
-        return m_aliases.isEmpty();
+        return m_aliases.empty();
     }
     /**
      * @brief Adds an alias to the dictionary
