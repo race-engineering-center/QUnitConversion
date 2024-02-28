@@ -14,6 +14,7 @@ public:
 
 private slots:
     void basicTests();
+    void basicStdStringTests();
     void fromJsonTests();
 
 };

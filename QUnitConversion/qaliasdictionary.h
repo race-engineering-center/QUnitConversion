@@ -12,7 +12,7 @@
  * conversion of unit name aliases such as
  * km/h -> kmph, kmh etc.
  */
-template<class member>
+template<class String>
 class QAliasDictionary
 {
 public:
@@ -54,7 +54,7 @@ public:
      * @param name name which will be returned if an alias requested
      * @param alias alias for the given name
      */
-    void addAlias(const QString &name, const QString &alias)
+    void addAlias(const String &name, const String &alias)
     {
         m_aliases.insert(alias, name);
         m_names.insert(name);
@@ -97,8 +97,8 @@ public:
         m_names.clear();
     }
 protected:
-    QMap <member, member> m_aliases;
-    QSet <member> m_names;
+    QMap <String, String> m_aliases;
+    QSet <String> m_names;
 };
 
 #endif // QALIASDICTIONARY_H
