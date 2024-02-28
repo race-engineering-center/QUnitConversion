@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED On)
 set(CMAKE_AUTOMOC On)
 
 set(SOURCES
-    qaliasdictionary.cpp
+
     qlinearfunction.cpp
     qunitconversionfamily.cpp
     qunitconversionrule.cpp

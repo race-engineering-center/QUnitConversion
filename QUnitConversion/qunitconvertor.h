@@ -136,7 +136,7 @@ protected:
     QMap <QString, QString> m_familiesByUnit;   ///< Key is a unit, Value is a corresponding family. Base units are also put here
     QMap <QString, QString> m_baseUnitsByFamilies;  ///< Key is a family name, Value is a corresponding base unit
     QMap <QString, QUnitConversionFamily> m_families;   ///< Key is a family name, Value is a family
-    QAliasDictionary m_aliases;
+    QAliasDictionary<QString> m_aliases;
 };
 
 #endif // QUNITCONVERTOR_H
