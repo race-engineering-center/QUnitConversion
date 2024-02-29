@@ -114,11 +114,6 @@ public:
      */
     QStringList units(const QString &family) const;
 
-    /**
-     * @brief Loads unit aliases from json serialized object
-     * @param object json-serialized aliases
-     */
-    void loadAliasesFromJson(const QJsonObject & object);
 
     /**
      * @brief Removes all alias rules

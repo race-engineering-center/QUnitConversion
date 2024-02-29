@@ -122,11 +122,6 @@ QStringList QUnitConvertor::units(const QString &family) const
     return m_familiesByUnit.keys(family);
 }
 
-void QUnitConvertor::loadAliasesFromJson(const QJsonObject &object)
-{
-    m_aliases.loadFromJson(object);
-}
-
 void QUnitConvertor::clearAliases()
 {
     m_aliases.clear();
