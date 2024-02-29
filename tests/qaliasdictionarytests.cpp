@@ -47,11 +47,11 @@ void QAliasDictionaryTests::basicStdStringTests()
     QVERIFY(dictionary.name("alias3") == "name");
     QVERIFY(dictionary.name("alias4").size() == 0);
 
-//    dictionary.addAlias("name2", "alias_for_name2");
-//    dictionary.addAlias("name2", "alias2_for_name2");
-//    QVERIFY(dictionary.name("alias_for_name2") == "name2");
-//    QVERIFY(dictionary.name("alias2_for_name2") == "name2");
-//    QVERIFY(dictionary.name("alias2_for_name3").isEmpty());
+    dictionary.addAlias("name2", "alias_for_name2");
+    dictionary.addAlias("name2", "alias2_for_name2");
+    QVERIFY(dictionary.name("alias_for_name2") == "name2");
+    QVERIFY(dictionary.name("alias2_for_name2") == "name2");
+    QVERIFY(dictionary.name("alias2_for_name3").size() == 0);
 
 //    auto aliases = dictionary.aliases("name");
 //    QVERIFY(aliases.contains("alias"));
