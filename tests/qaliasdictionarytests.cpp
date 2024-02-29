@@ -37,15 +37,15 @@ void QAliasDictionaryTests::basicStdStringTests()
     QAliasDictionary<std::string> dictionary;
     QVERIFY(dictionary.isEmpty());
     dictionary.addAlias("name", "alias");
-//    dictionary.addAlias("name", "alias2");
-//    dictionary.addAlias("name", "alias3");
+    dictionary.addAlias("name", "alias2");
+    dictionary.addAlias("name", "alias3");
 
-//    QVERIFY(!dictionary.isEmpty());
-//    QVERIFY(dictionary.name("name") == "name");
-//    QVERIFY(dictionary.name("alias") == "name");
-//    QVERIFY(dictionary.name("alias2") == "name");
-//    QVERIFY(dictionary.name("alias3") == "name");
-//    QVERIFY(dictionary.name("alias4").isEmpty());
+    QVERIFY(!dictionary.isEmpty());
+    QVERIFY(dictionary.name("name") == "name");
+    QVERIFY(dictionary.name("alias") == "name");
+    QVERIFY(dictionary.name("alias2") == "name");
+    QVERIFY(dictionary.name("alias3") == "name");
+    QVERIFY(dictionary.name("alias4").size() == 0);
 
 //    dictionary.addAlias("name2", "alias_for_name2");
 //    dictionary.addAlias("name2", "alias2_for_name2");

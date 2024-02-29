@@ -26,7 +26,7 @@ public:
      * @param alias to get name
      * @return string containing name corresponding to the given alias
      */
-    QString name(const QString &alias) const
+    String name(const String &alias) const
     {
         if (m_names.contains(alias))
             return alias;
@@ -37,7 +37,7 @@ public:
      * @param name name to get aliases
      * @return QList<QString> containing aliases for a given name
      */
-    QList<QString> aliases(const QString &name) const
+    QList<String> aliases(const String &name) const
     {
         return m_aliases.keys(name);
     }
@@ -64,7 +64,7 @@ public:
      * @param alias alias to check existence
      * @return true if a dictionary contains name for the given alias, false otherwise
      */
-    bool contains(const QString &alias) const
+    bool contains(const String &alias) const
     {
         if (m_names.contains(alias))
             return true;
