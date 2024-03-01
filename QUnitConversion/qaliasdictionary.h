@@ -70,24 +70,7 @@ public:
             return true;
         return m_aliases.contains(alias);
     }
-    /**
-     * @brief Loads alias rules from JSON
-     * @param object object containing serialized dictionary
-     */
-//    void loadFromJson(const QJsonObject &object)
-//    {
-//        QJsonArray rules = object["aliases"].toArray();
-//        for (const auto & r: std::as_const(rules))
-//        {
-//            QJsonObject rule = r.toObject();
-//            QString name = rule["name"].toString();
-//            if (name.isEmpty())
-//                continue;
-//            auto aliases = rule["aliases"].toArray();
-//            for (const auto & alias: std::as_const(aliases))
-//                addAlias(name, alias.toString());
-//        }
-//    }
+
     /**
      * @brief Removes all alias-name from dictionary
      */
@@ -97,8 +80,8 @@ public:
         m_names.clear();
     }
 protected:
-    QMap <String, String> m_aliases;
-    QSet <String> m_names;
+    QMap<String, String> m_aliases;
+    QSet<String> m_names;
 };
 
 #endif // QALIASDICTIONARY_H
