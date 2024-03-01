@@ -14,7 +14,6 @@ public:
 
 private slots:
     void addRuleTest();
-    void fromJsonTest();    // and conversion with aliases
 };
 
 #endif // QUNITCONVERTORTESTS_H

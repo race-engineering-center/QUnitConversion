@@ -2,8 +2,6 @@
 #define QALIASDICTIONARY_H
 
 #include <QMap>
-#include <QJsonObject>
-#include <QJsonArray>
 #include <QDebug>
 
 /**
@@ -12,6 +10,7 @@
  * conversion of unit name aliases such as
  * km/h -> kmph, kmh etc.
  */
+template<class String>
 class QAliasDictionary
 {
 public:
@@ -25,49 +24,62 @@ public:
      * @param alias to get name
      * @return string containing name corresponding to the given alias
      */
-    QString name(const QString & alias) const;
-
+    String name(const String &alias) const
+    {
+        if (m_names.contains(alias))
+            return alias;
+        return m_aliases.value(alias);
+    }
     /**
      * @brief Gets a list of aliases for a given name
      * @param name name to get aliases
      * @return QList<QString> containing aliases for a given name
      */
-    QList<QString> aliases(const QString & name) const;
-
+    QList<String> aliases(const String &name) const
+    {
+        return m_aliases.keys(name);
+    }
     /**
      * @brief Checks if this dictionary is empty
      * @return true if empty, false otherwise
      */
-    bool isEmpty() const;
-
+    bool isEmpty() const
+    {
+        return m_aliases.isEmpty();
+    }
     /**
      * @brief Adds an alias to the dictionary
      * @param name name which will be returned if an alias requested
      * @param alias alias for the given name
      */
-    void addAlias(const QString & name, const QString & alias);
-
+    void addAlias(const String &name, const String &alias)
+    {
+        m_aliases.insert(alias, name);
+        m_names.insert(name);
+    }
     /**
      * @brief Checks if a dictionary contains name for the given alias
      * @param alias alias to check existence
      * @return true if a dictionary contains name for the given alias, false otherwise
      */
-    bool contains(const QString & alias) const;
-
-    /**
-     * @brief Loads alias rules from JSON
-     * @param object object containing serialized dictionary
-     */
-    void loadFromJson(const QJsonObject & object);
+    bool contains(const String &alias) const
+    {
+        if (m_names.contains(alias))
+            return true;
+        return m_aliases.contains(alias);
+    }
 
     /**
      * @brief Removes all alias-name from dictionary
      */
-    void clear();
-
+    void clear()
+    {
+        m_aliases.clear();
+        m_names.clear();
+    }
 protected:
-    QMap <QString, QString> m_aliases;
-    QSet <QString> m_names;
+    QMap<String, String> m_aliases;
+    QSet<String> m_names;
 };
 
 #endif // QALIASDICTIONARY_H

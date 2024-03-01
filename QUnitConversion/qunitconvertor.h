@@ -1,8 +1,6 @@
 #ifndef QUNITCONVERTOR_H
 #define QUNITCONVERTOR_H
 
-#include <QJsonObject>
-#include <QJsonArray>
 #include <QMap>
 
 #include <math.h>
@@ -53,23 +51,6 @@ public:
     double convert(double value, const QString & in, const QString & out, double defaultValue = NAN) const;
 
     /**
-     * @brief Deserializes unit conversion rules from JSON
-     * @param json JSON object for deserialization
-     * @details Note that this function does not clear the existing
-     * conversion allowing you to override or augment conversion rules
-     * from a number of different files, let's say, built-in conversions
-     * and user conversions
-     */
-    void loadFromJson(const QJsonObject & json);
-
-    /**
-     * @brief Serializes current unit conversion rules to JSON
-     * @return QJsonObject containing serialized rules
-     * @note Not implemented yet
-     */
-    QJsonObject toJson() const;
-
-    /**
      * @brief Adds a conversion rule to convertor
      * @param rule rule to add
      * @details This function doesn't convert an alas for a unit to an actual unit name, so make sure to
@@ -114,11 +95,6 @@ public:
      */
     QStringList units(const QString &family) const;
 
-    /**
-     * @brief Loads unit aliases from json serialized object
-     * @param object json-serialized aliases
-     */
-    void loadAliasesFromJson(const QJsonObject & object);
 
     /**
      * @brief Removes all alias rules
@@ -136,7 +112,7 @@ protected:
     QMap <QString, QString> m_familiesByUnit;   ///< Key is a unit, Value is a corresponding family. Base units are also put here
     QMap <QString, QString> m_baseUnitsByFamilies;  ///< Key is a family name, Value is a corresponding base unit
     QMap <QString, QUnitConversionFamily> m_families;   ///< Key is a family name, Value is a family
-    QAliasDictionary m_aliases;
+    QAliasDictionary<QString> m_aliases;
 };
 
 #endif // QUNITCONVERTOR_H

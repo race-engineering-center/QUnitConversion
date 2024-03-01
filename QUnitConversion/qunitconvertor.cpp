@@ -33,40 +33,6 @@ double QUnitConvertor::convert(double value, const QString &in, const QString &o
     return function.y(value);
 }
 
-void QUnitConvertor::loadFromJson(const QJsonObject &json)
-{
-    QJsonArray rules = json["rules"].toArray();
-    for (const auto & r: std::as_const(rules))
-    {
-        QJsonObject rule = r.toObject();
-        QString baseUnit = rule["base"].toString();
-        QString familyName = rule["family"].toString();
-        QJsonArray conversions = rule["conversions"].toArray();
-        for (const auto & c: std::as_const(conversions))
-        {
-            QJsonObject conversion = c.toObject();
-            QString unit = conversion["unit"].toString();
-            double k = conversion["k"].toDouble();
-            double b = conversion["b"].toDouble();
-            if (unit.isEmpty() || qFuzzyIsNull(k))
-                continue;
-            addConversionRule(QUnitConversionRule(familyName,
-                                                  baseUnit,
-                                                  unit,
-                                                  k,
-                                                  b
-                                                  ));
-        }
-    }
-}
-
-QJsonObject QUnitConvertor::toJson() const
-{
-    // TODO implement
-    Q_ASSERT_X(false, Q_FUNC_INFO, "Save to JSON is not yet implemented");
-    return {};
-}
-
 void QUnitConvertor::addConversionRule(const QUnitConversionRule &rule)
 {
     if (m_baseUnitsByFamilies.contains(rule.family()) && m_baseUnitsByFamilies[rule.family()] != rule.baseUnit())
@@ -120,11 +86,6 @@ QStringList QUnitConvertor::conversions(const QString &unit) const
 QStringList QUnitConvertor::units(const QString &family) const
 {
     return m_familiesByUnit.keys(family);
-}
-
-void QUnitConvertor::loadAliasesFromJson(const QJsonObject &object)
-{
-    m_aliases.loadFromJson(object);
 }
 
 void QUnitConvertor::clearAliases()

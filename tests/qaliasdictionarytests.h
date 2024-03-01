@@ -2,7 +2,7 @@
 #define QALIASDICTIONARYTESTS_H
 
 #include <QtTest>
-#include <QJsonDocument>
+//#include <QJsonDocument>
 
 #include "qaliasdictionary.h"
 
@@ -14,8 +14,7 @@ public:
 
 private slots:
     void basicTests();
-    void fromJsonTests();
-
+    void basicStdStringTests();
 };
 
 #endif // QALIASDICTIONARYTESTS_H
