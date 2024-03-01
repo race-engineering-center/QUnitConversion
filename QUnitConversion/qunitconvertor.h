@@ -1,8 +1,6 @@
 #ifndef QUNITCONVERTOR_H
 #define QUNITCONVERTOR_H
 
-#include <QJsonObject>
-#include <QJsonArray>
 #include <QMap>
 
 #include <math.h>
@@ -51,23 +49,6 @@ public:
      * @details Supports aliases for unit names, see QAliasDictionary
      */
     double convert(double value, const QString & in, const QString & out, double defaultValue = NAN) const;
-
-    /**
-     * @brief Deserializes unit conversion rules from JSON
-     * @param json JSON object for deserialization
-     * @details Note that this function does not clear the existing
-     * conversion allowing you to override or augment conversion rules
-     * from a number of different files, let's say, built-in conversions
-     * and user conversions
-     */
-    void loadFromJson(const QJsonObject & json);
-
-    /**
-     * @brief Serializes current unit conversion rules to JSON
-     * @return QJsonObject containing serialized rules
-     * @note Not implemented yet
-     */
-    QJsonObject toJson() const;
 
     /**
      * @brief Adds a conversion rule to convertor

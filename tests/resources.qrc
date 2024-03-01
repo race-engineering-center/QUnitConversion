@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>testdata/aliases.json</file>
-        <file>testdata/conversion_rules.json</file>
-    </qresource>
-</RCC>

@@ -29,7 +29,6 @@ set(HEADERS
 add_executable(QUnitConversionTests
         ${SOURCES}
         ${HEADERS}
-        resources.qrc
         )
 
 target_link_libraries(QUnitConversionTests

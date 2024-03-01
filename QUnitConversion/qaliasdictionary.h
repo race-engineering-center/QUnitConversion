@@ -2,8 +2,6 @@
 #define QALIASDICTIONARY_H
 
 #include <QMap>
-#include <QJsonObject>
-#include <QJsonArray>
 #include <QDebug>
 
 /**

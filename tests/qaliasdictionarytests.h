@@ -2,7 +2,7 @@
 #define QALIASDICTIONARYTESTS_H
 
 #include <QtTest>
-#include <QJsonDocument>
+//#include <QJsonDocument>
 
 #include "qaliasdictionary.h"
 
