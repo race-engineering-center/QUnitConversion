@@ -15,7 +15,6 @@ public:
 private slots:
     void basicTests();
     void basicStdStringTests();
-
 };
 
 #endif // QALIASDICTIONARYTESTS_H
