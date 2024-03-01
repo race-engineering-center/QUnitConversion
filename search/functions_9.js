@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['qaliasdictionary_0',['QAliasDictionary',['../class_q_alias_dictionary.html#a2f4067dd161f6de4797bd9abeadcb941',1,'QAliasDictionary']]],
-  ['qaliasdictionarytests_1',['QAliasDictionaryTests',['../class_q_alias_dictionary_tests.html#a1fa0ae347f2401b569ffe9aeeb30e9a4',1,'QAliasDictionaryTests']]],
-  ['qlinearfunction_2',['qlinearfunction',['../class_q_linear_function.html#a500f067f46a6aac24a10bdee7592377a',1,'QLinearFunction::QLinearFunction()'],['../class_q_linear_function.html#aaace5f5eb36c4f3effe11368f72c9de5',1,'QLinearFunction::QLinearFunction(double k, double b)']]],
-  ['qlinearfunctiontests_3',['QLinearFunctionTests',['../class_q_linear_function_tests.html#ad30f148cae6ecb4d6fff0a8385afc221',1,'QLinearFunctionTests']]],
-  ['qunitconversionfamily_4',['qunitconversionfamily',['../class_q_unit_conversion_family.html#a7fbf3e754d7cf7d9e11bead3952e2ed9',1,'QUnitConversionFamily::QUnitConversionFamily()=default'],['../class_q_unit_conversion_family.html#a878dbd0340bf8d5d514e205e1ce08dc9',1,'QUnitConversionFamily::QUnitConversionFamily(const QString &amp;familyName, const QString &amp;baseUnit)']]],
-  ['qunitconversionrule_5',['qunitconversionrule',['../class_q_unit_conversion_rule.html#a740ceebd3a3e74c1fe383a7b6e33811e',1,'QUnitConversionRule::QUnitConversionRule()=default'],['../class_q_unit_conversion_rule.html#a7d1600fc4370c7ed33087eab7ed0df8f',1,'QUnitConversionRule::QUnitConversionRule(const QString &amp;family, const QString &amp;baseUnit, const QString &amp;unit, const QLinearFunction &amp;convertFunction)'],['../class_q_unit_conversion_rule.html#ab4a8729e611b00db2cdddde548e71673',1,'QUnitConversionRule::QUnitConversionRule(const QString &amp;family, const QString &amp;baseUnit, const QString &amp;unit, double k, double b)']]],
-  ['qunitconvertor_6',['QUnitConvertor',['../class_q_unit_convertor.html#ae1b74bed8a9b7330c0c72fa7bcefe90d',1,'QUnitConvertor']]],
-  ['qunitconvertortests_7',['QUnitConvertorTests',['../class_q_unit_convertor_tests.html#a21a5d46e503af20955b8fa1ac3317191',1,'QUnitConvertorTests']]]
+  ['setb_0',['setB',['../class_q_linear_function.html#abb8b63e431a1052f982347b37deb912e',1,'QLinearFunction']]],
+  ['setbaseunit_1',['setBaseUnit',['../class_q_unit_conversion_rule.html#a95f57bd0019c2ef623b1ed195bb6737c',1,'QUnitConversionRule']]],
+  ['setconvertfunction_2',['setConvertFunction',['../class_q_unit_conversion_rule.html#a6d7810a4d970c35c6f499f44e1a9bb5e',1,'QUnitConversionRule']]],
+  ['setfamily_3',['setFamily',['../class_q_unit_conversion_rule.html#af74a2d9fd0568f7d1ed7d2a16aec3b69',1,'QUnitConversionRule']]],
+  ['setk_4',['setK',['../class_q_linear_function.html#a2cdbf9fd64c22579bd9c61e901100a8b',1,'QLinearFunction']]],
+  ['setunit_5',['setUnit',['../class_q_unit_conversion_rule.html#a3543d3ff4ccf877f636c9189145028f6',1,'QUnitConversionRule']]]
 ];

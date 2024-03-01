@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['setb_0',['setB',['../class_q_linear_function.html#abb8b63e431a1052f982347b37deb912e',1,'QLinearFunction']]],
-  ['setbaseunit_1',['setBaseUnit',['../class_q_unit_conversion_rule.html#a95f57bd0019c2ef623b1ed195bb6737c',1,'QUnitConversionRule']]],
-  ['setconvertfunction_2',['setConvertFunction',['../class_q_unit_conversion_rule.html#a6d7810a4d970c35c6f499f44e1a9bb5e',1,'QUnitConversionRule']]],
-  ['setfamily_3',['setFamily',['../class_q_unit_conversion_rule.html#af74a2d9fd0568f7d1ed7d2a16aec3b69',1,'QUnitConversionRule']]],
-  ['setk_4',['setK',['../class_q_linear_function.html#a2cdbf9fd64c22579bd9c61e901100a8b',1,'QLinearFunction']]],
-  ['setunit_5',['setUnit',['../class_q_unit_conversion_rule.html#a3543d3ff4ccf877f636c9189145028f6',1,'QUnitConversionRule']]]
+  ['unit_0',['unit',['../class_q_unit_conversion_rule.html#ab1a15580aacef830dcea9ec24791d67d',1,'QUnitConversionRule']]],
+  ['unitname_1',['unitName',['../class_q_unit_convertor.html#a5ee9a12820378e9aada3122663ff72bf',1,'QUnitConvertor']]],
+  ['units_2',['units',['../class_q_unit_convertor.html#af3ecd2dee38824bc944bce79d3b2ed9c',1,'QUnitConvertor']]]
 ];

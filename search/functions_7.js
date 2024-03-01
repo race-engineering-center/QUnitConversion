@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]]
+  ['name_0',['name',['../class_q_alias_dictionary.html#a55c03b85dfb3646d508c5d5bca25270d',1,'QAliasDictionary']]]
 ];

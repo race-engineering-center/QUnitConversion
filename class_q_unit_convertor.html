@@ -98,12 +98,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acb8f9a87f53cce10dbbadee7c7706cae" id="r_acb8f9a87f53cce10dbbadee7c7706cae"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#acb8f9a87f53cce10dbbadee7c7706cae">convert</a> (double value, const QString &amp;in, const QString &amp;out, double defaultValue=NAN) const</td></tr>
 <tr class="memdesc:acb8f9a87f53cce10dbbadee7c7706cae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a given value from in unit to out unit.  <br /></td></tr>
 <tr class="separator:acb8f9a87f53cce10dbbadee7c7706cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af610e32a636574568bca8fec0e130db1" id="r_af610e32a636574568bca8fec0e130db1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#af610e32a636574568bca8fec0e130db1">loadFromJson</a> (const QJsonObject &amp;json)</td></tr>
-<tr class="memdesc:af610e32a636574568bca8fec0e130db1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserializes unit conversion rules from JSON.  <br /></td></tr>
-<tr class="separator:af610e32a636574568bca8fec0e130db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e85ea15fb95bd94eae43a5097eb6c7e" id="r_a8e85ea15fb95bd94eae43a5097eb6c7e"><td class="memItemLeft" align="right" valign="top">QJsonObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a8e85ea15fb95bd94eae43a5097eb6c7e">toJson</a> () const</td></tr>
-<tr class="memdesc:a8e85ea15fb95bd94eae43a5097eb6c7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes current unit conversion rules to JSON.  <br /></td></tr>
-<tr class="separator:a8e85ea15fb95bd94eae43a5097eb6c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a433f56e02b285daabedc08d4828e2edb" id="r_a433f56e02b285daabedc08d4828e2edb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a433f56e02b285daabedc08d4828e2edb">addConversionRule</a> (const <a class="el" href="class_q_unit_conversion_rule.html">QUnitConversionRule</a> &amp;rule)</td></tr>
 <tr class="memdesc:a433f56e02b285daabedc08d4828e2edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a conversion rule to convertor.  <br /></td></tr>
 <tr class="separator:a433f56e02b285daabedc08d4828e2edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,9 +116,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af3ecd2dee38824bc944bce79d3b2ed9c" id="r_af3ecd2dee38824bc944bce79d3b2ed9c"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#af3ecd2dee38824bc944bce79d3b2ed9c">units</a> (const QString &amp;<a class="el" href="class_q_unit_convertor.html#aed19fb54539f2ca4d32d4fd860671731">family</a>) const</td></tr>
 <tr class="memdesc:af3ecd2dee38824bc944bce79d3b2ed9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method provides access to a list of units in this convertor within a given family, effectively providing a list of unit with a possible conversion from any unit of this list to any other.  <br /></td></tr>
 <tr class="separator:af3ecd2dee38824bc944bce79d3b2ed9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02da9ad94faaa510c2347957a721e055" id="r_a02da9ad94faaa510c2347957a721e055"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a02da9ad94faaa510c2347957a721e055">loadAliasesFromJson</a> (const QJsonObject &amp;object)</td></tr>
-<tr class="memdesc:a02da9ad94faaa510c2347957a721e055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads unit aliases from json serialized object.  <br /></td></tr>
-<tr class="separator:a02da9ad94faaa510c2347957a721e055"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae357bab051096d18a06465cd2aaae87d" id="r_ae357bab051096d18a06465cd2aaae87d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#ae357bab051096d18a06465cd2aaae87d">clearAliases</a> ()</td></tr>
 <tr class="memdesc:ae357bab051096d18a06465cd2aaae87d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all alias rules.  <br /></td></tr>
 <tr class="separator:ae357bab051096d18a06465cd2aaae87d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,8 +134,8 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a7f394789592884c2908ae0099e63e41b" id="r_a7f394789592884c2908ae0099e63e41b"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, <a class="el" href="class_q_unit_conversion_family.html">QUnitConversionFamily</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a7f394789592884c2908ae0099e63e41b">m_families</a></td></tr>
 <tr class="memdesc:a7f394789592884c2908ae0099e63e41b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key is a family name, Value is a family.  <br /></td></tr>
 <tr class="separator:a7f394789592884c2908ae0099e63e41b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37c3ac957204c423e70add80949e6767" id="r_a37c3ac957204c423e70add80949e6767"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_alias_dictionary.html">QAliasDictionary</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a37c3ac957204c423e70add80949e6767">m_aliases</a></td></tr>
-<tr class="separator:a37c3ac957204c423e70add80949e6767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5c1ae1e934fbfa64ee1ed2d786f8aa1" id="r_af5c1ae1e934fbfa64ee1ed2d786f8aa1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_alias_dictionary.html">QAliasDictionary</a>&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#af5c1ae1e934fbfa64ee1ed2d786f8aa1">m_aliases</a></td></tr>
+<tr class="separator:af5c1ae1e934fbfa64ee1ed2d786f8aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -455,80 +446,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a02da9ad94faaa510c2347957a721e055" name="a02da9ad94faaa510c2347957a721e055"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02da9ad94faaa510c2347957a721e055">&#9670;&#160;</a></span>loadAliasesFromJson()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void QUnitConvertor::loadAliasesFromJson </td>
-          <td>(</td>
-          <td class="paramtype">const QJsonObject &amp;&#160;</td>
-          <td class="paramname"><em>object</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Loads unit aliases from json serialized object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">object</td><td>json-serialized aliases </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="af610e32a636574568bca8fec0e130db1" name="af610e32a636574568bca8fec0e130db1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af610e32a636574568bca8fec0e130db1">&#9670;&#160;</a></span>loadFromJson()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void QUnitConvertor::loadFromJson </td>
-          <td>(</td>
-          <td class="paramtype">const QJsonObject &amp;&#160;</td>
-          <td class="paramname"><em>json</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Deserializes unit conversion rules from JSON. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">json</td><td>JSON object for deserialization</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Note that this function does not clear the existing conversion allowing you to override or augment conversion rules from a number of different files, let's say, built-in conversions and user conversions </p>
-
-</div>
-</div>
-<a id="a8e85ea15fb95bd94eae43a5097eb6c7e" name="a8e85ea15fb95bd94eae43a5097eb6c7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e85ea15fb95bd94eae43a5097eb6c7e">&#9670;&#160;</a></span>toJson()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QJsonObject QUnitConvertor::toJson </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Serializes current unit conversion rules to JSON. </p>
-<dl class="section return"><dt>Returns</dt><dd>QJsonObject containing serialized rules </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Not implemented yet </dd></dl>
-
-</div>
-</div>
 <a id="a5ee9a12820378e9aada3122663ff72bf" name="a5ee9a12820378e9aada3122663ff72bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5ee9a12820378e9aada3122663ff72bf">&#9670;&#160;</a></span>unitName()</h2>
 
@@ -607,8 +524,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a37c3ac957204c423e70add80949e6767" name="a37c3ac957204c423e70add80949e6767"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37c3ac957204c423e70add80949e6767">&#9670;&#160;</a></span>m_aliases</h2>
+<a id="af5c1ae1e934fbfa64ee1ed2d786f8aa1" name="af5c1ae1e934fbfa64ee1ed2d786f8aa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5c1ae1e934fbfa64ee1ed2d786f8aa1">&#9670;&#160;</a></span>m_aliases</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -617,7 +534,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_q_alias_dictionary.html">QAliasDictionary</a> QUnitConvertor::m_aliases</td>
+          <td class="memname"><a class="el" href="class_q_alias_dictionary.html">QAliasDictionary</a>&lt;QString&gt; QUnitConvertor::m_aliases</td>
         </tr>
       </table>
   </td>

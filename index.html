@@ -101,8 +101,8 @@ $(function() {
 <div class="line">    kilometers.push_back(convertFunction.y(m));</div>
 <div class="ttc" id="aclass_q_linear_function_html"><div class="ttname"><a href="class_q_linear_function.html">QLinearFunction</a></div><div class="ttdoc">The QLinearFunction class describes a linear function with a format of Y = k*X + b.</div><div class="ttdef"><b>Definition</b> qlinearfunction.h:11</div></div>
 <div class="ttc" id="aclass_q_unit_conversion_rule_html"><div class="ttname"><a href="class_q_unit_conversion_rule.html">QUnitConversionRule</a></div><div class="ttdoc">The QUnitConversionRule class represents a unit conversion rule from base unit to second unit within ...</div><div class="ttdef"><b>Definition</b> qunitconversionrule.h:15</div></div>
-<div class="ttc" id="aclass_q_unit_convertor_html"><div class="ttname"><a href="class_q_unit_convertor.html">QUnitConvertor</a></div><div class="ttdoc">The QUnitConvertor class provides tool for converting units stored in a string form....</div><div class="ttdef"><b>Definition</b> qunitconvertor.h:20</div></div>
-<div class="ttc" id="aclass_q_unit_convertor_html_a433f56e02b285daabedc08d4828e2edb"><div class="ttname"><a href="class_q_unit_convertor.html#a433f56e02b285daabedc08d4828e2edb">QUnitConvertor::addConversionRule</a></div><div class="ttdeci">void addConversionRule(const QUnitConversionRule &amp;rule)</div><div class="ttdoc">Adds a conversion rule to convertor.</div><div class="ttdef"><b>Definition</b> qunitconvertor.cpp:70</div></div>
+<div class="ttc" id="aclass_q_unit_convertor_html"><div class="ttname"><a href="class_q_unit_convertor.html">QUnitConvertor</a></div><div class="ttdoc">The QUnitConvertor class provides tool for converting units stored in a string form....</div><div class="ttdef"><b>Definition</b> qunitconvertor.h:18</div></div>
+<div class="ttc" id="aclass_q_unit_convertor_html_a433f56e02b285daabedc08d4828e2edb"><div class="ttname"><a href="class_q_unit_convertor.html#a433f56e02b285daabedc08d4828e2edb">QUnitConvertor::addConversionRule</a></div><div class="ttdeci">void addConversionRule(const QUnitConversionRule &amp;rule)</div><div class="ttdoc">Adds a conversion rule to convertor.</div><div class="ttdef"><b>Definition</b> qunitconvertor.cpp:36</div></div>
 <div class="ttc" id="aclass_q_unit_convertor_html_a98b3edf83ef0f7742e6e14bcdba06ee3"><div class="ttname"><a href="class_q_unit_convertor.html#a98b3edf83ef0f7742e6e14bcdba06ee3">QUnitConvertor::convert</a></div><div class="ttdeci">QLinearFunction convert(const QString &amp;in, const QString &amp;out) const</div><div class="ttdoc">Converts from in unit to out unit.</div><div class="ttdef"><b>Definition</b> qunitconvertor.cpp:8</div></div>
 </div><!-- fragment --><h2>Aliases:</h2>
 <p><code>QUnitConversion</code> supports aliases for units with possible conversion on the fly, so you km/h, kmph and kmh will be converted to m/s properly. Also this example illustrates loading conversions and aliases from JSON-formatted file.</p>
@@ -111,19 +111,17 @@ $(function() {
 <div class="line"><span class="comment">// load conversion rules from JSON</span></div>
 <div class="line">QFile conversions(<span class="stringliteral">&quot;conversion_rules.json&quot;</span>);</div>
 <div class="line">conversions.open(QIODevice::ReadOnly);</div>
-<div class="line">convertor.<a class="code hl_function" href="class_q_unit_convertor.html#af610e32a636574568bca8fec0e130db1">loadFromJson</a>(QJsonDocument::fromJson(conversions.readAll()).object());</div>
+<div class="line">convertor.loadFromJson(QJsonDocument::fromJson(conversions.readAll()).object());</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// load aliases for unit names from JSON</span></div>
 <div class="line">QFile aliases(<span class="stringliteral">&quot;aliases.json&quot;</span>);</div>
 <div class="line">aliases.open(QIODevice::ReadOnly);</div>
-<div class="line">convertor.<a class="code hl_function" href="class_q_unit_convertor.html#a02da9ad94faaa510c2347957a721e055">loadAliasesFromJson</a>(QJsonDocument::fromJson(aliases.readAll()).object());</div>
+<div class="line">convertor.loadAliasesFromJson(QJsonDocument::fromJson(aliases.readAll()).object());</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">double</span> km;</div>
 <div class="line">km = convertor.<a class="code hl_function" href="class_q_unit_convertor.html#a98b3edf83ef0f7742e6e14bcdba06ee3">convert</a>(50, <span class="stringliteral">&quot;km&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>);   <span class="comment">// returns value of a 50 km converted to meters</span></div>
 <div class="line">km = convertor.<a class="code hl_function" href="class_q_unit_convertor.html#a98b3edf83ef0f7742e6e14bcdba06ee3">convert</a>(50, <span class="stringliteral">&quot;km&quot;</span>, <span class="stringliteral">&quot;meter&quot;</span>);  <span class="comment">// &quot;meter&quot; is an alias for &quot;m&quot; written in loaded json</span></div>
 <div class="line">km = convertor.<a class="code hl_function" href="class_q_unit_convertor.html#a98b3edf83ef0f7742e6e14bcdba06ee3">convert</a>(50, <span class="stringliteral">&quot;km&quot;</span>, <span class="stringliteral">&quot;meters&quot;</span>); <span class="comment">// and &quot;meters&quot; a as well</span></div>
-<div class="ttc" id="aclass_q_unit_convertor_html_a02da9ad94faaa510c2347957a721e055"><div class="ttname"><a href="class_q_unit_convertor.html#a02da9ad94faaa510c2347957a721e055">QUnitConvertor::loadAliasesFromJson</a></div><div class="ttdeci">void loadAliasesFromJson(const QJsonObject &amp;object)</div><div class="ttdoc">Loads unit aliases from json serialized object.</div><div class="ttdef"><b>Definition</b> qunitconvertor.cpp:125</div></div>
-<div class="ttc" id="aclass_q_unit_convertor_html_af610e32a636574568bca8fec0e130db1"><div class="ttname"><a href="class_q_unit_convertor.html#af610e32a636574568bca8fec0e130db1">QUnitConvertor::loadFromJson</a></div><div class="ttdeci">void loadFromJson(const QJsonObject &amp;json)</div><div class="ttdoc">Deserializes unit conversion rules from JSON.</div><div class="ttdef"><b>Definition</b> qunitconvertor.cpp:36</div></div>
 </div><!-- fragment --><h1>License</h1>
 <p><code>QUnitConversion</code> is distributed under MIT license</p>
 <h1>Repo contents</h1>
