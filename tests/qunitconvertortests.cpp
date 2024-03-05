@@ -110,17 +110,20 @@ void QUnitConvertorTests::addRuleTest()
 void QUnitConvertorTests::setAliasesTest()
 {
     QAliasDictionary<QString> aliases;
-    aliases.addAlias("name", "alias1");
-    aliases.addAlias("name", "alias2");
-    aliases.addAlias("name", "alias3");
+    aliases.addAlias("m", "m");
+    aliases.addAlias("m", "meter");
+    aliases.addAlias("m", "meters");
 
     QUnitConvertor convertor;
+    convertor.addConversionRule(QUnitConversionRule("length", "m", "km", 0.001, 0));
+    QVERIFY(convertor.canConvert("m", "km"));
+    QVERIFY(convertor.canConvert("km", "m"));
+    QVERIFY(!convertor.canConvert("km", "meter"));
+
     convertor.setAliases(aliases);
 
-    QVERIFY(convertor.unitName("name") == "name");
-    QVERIFY(convertor.unitName("alias1") == "name");
-    QVERIFY(convertor.unitName("alias2") == "name");
-    QVERIFY(convertor.unitName("alias3") == "name");
+    QVERIFY(convertor.canConvert("km", "meter"));
+    QVERIFY(convertor.canConvert("km", "meters"));
 
 }
 

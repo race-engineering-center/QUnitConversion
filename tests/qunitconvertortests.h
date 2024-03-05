@@ -15,6 +15,7 @@ public:
 private slots:
     void addRuleTest();
     void setAliasesTest();
+//    void addAliasTest();
 };
 
 #endif // QUNITCONVERTORTESTS_H
