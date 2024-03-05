@@ -95,7 +95,14 @@ public:
      */
     QStringList units(const QString &family) const;
 
+    /**
+     * @brief adds aliases from the object QAliasDictionary
+     */
     void setAliases(QAliasDictionary<QString> aliases);
+
+    /**
+     * @brief adds one alias
+     */
     void addAlias(QString name, QString alias);
 
 
