@@ -117,10 +117,17 @@ void QUnitConvertorTests::setAliasesTest()
     QUnitConvertor convertor;
     convertor.setAliases(aliases);
 
-    QVERIFY(convertor.m_aliases.name("name") == "name");
-    QVERIFY(convertor.m_aliases.name("alias1") == "name");
-    QVERIFY(convertor.m_aliases.name("alias2") == "name");
-    QVERIFY(convertor.m_aliases.name("alias3") == "name");
+    QVERIFY(convertor.unitName("name") == "name");
+    QVERIFY(convertor.unitName("alias1") == "name");
+    QVERIFY(convertor.unitName("alias2") == "name");
+    QVERIFY(convertor.unitName("alias3") == "name");
 
 }
+
+//void QUnitConvertorTests::addAliasTest()
+//{
+//    QUnitConvertor convertor;
+//    convertor.addAlias("name", "")
+
+//}
 
