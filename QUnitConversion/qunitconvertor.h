@@ -95,6 +95,8 @@ public:
      */
     QStringList units(const QString &family) const;
 
+    void setAliases(QAliasDictionary<QString> aliases);
+
 
     /**
      * @brief Removes all alias rules

@@ -88,6 +88,11 @@ QStringList QUnitConvertor::units(const QString &family) const
     return m_familiesByUnit.keys(family);
 }
 
+void QUnitConvertor::setAliases(QAliasDictionary<QString> aliases)
+{
+    m_aliases = std::move(aliases);
+}
+
 void QUnitConvertor::clearAliases()
 {
     m_aliases.clear();
