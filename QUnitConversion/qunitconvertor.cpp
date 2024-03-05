@@ -95,7 +95,7 @@ void QUnitConvertor::setAliases(QAliasDictionary<QString> aliases)
 
 void QUnitConvertor::addAlias(QString name, QString alias)
 {
-    m_aliases.addAlias(std::move(name), std::move(alias));
+    m_aliases.addAlias(name, alias);
 }
 
 void QUnitConvertor::clearAliases()
