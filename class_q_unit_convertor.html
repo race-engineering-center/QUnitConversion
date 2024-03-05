@@ -116,6 +116,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af3ecd2dee38824bc944bce79d3b2ed9c" id="r_af3ecd2dee38824bc944bce79d3b2ed9c"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#af3ecd2dee38824bc944bce79d3b2ed9c">units</a> (const QString &amp;<a class="el" href="class_q_unit_convertor.html#aed19fb54539f2ca4d32d4fd860671731">family</a>) const</td></tr>
 <tr class="memdesc:af3ecd2dee38824bc944bce79d3b2ed9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method provides access to a list of units in this convertor within a given family, effectively providing a list of unit with a possible conversion from any unit of this list to any other.  <br /></td></tr>
 <tr class="separator:af3ecd2dee38824bc944bce79d3b2ed9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af61d2acd19248d08fc1c925886e01873" id="r_af61d2acd19248d08fc1c925886e01873"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#af61d2acd19248d08fc1c925886e01873">setAliases</a> (<a class="el" href="class_q_alias_dictionary.html">QAliasDictionary</a>&lt; QString &gt; aliases)</td></tr>
+<tr class="memdesc:af61d2acd19248d08fc1c925886e01873"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds aliases from the object <a class="el" href="class_q_alias_dictionary.html" title="The QAliasDictionary class provides an alias dictionary to allow quick on-the-fly conversion of unit ...">QAliasDictionary</a>  <br /></td></tr>
+<tr class="separator:af61d2acd19248d08fc1c925886e01873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4afbaf7b8e2313965480250157e2dbcb" id="r_a4afbaf7b8e2313965480250157e2dbcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a4afbaf7b8e2313965480250157e2dbcb">addAlias</a> (QString name, QString alias)</td></tr>
+<tr class="memdesc:a4afbaf7b8e2313965480250157e2dbcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds one alias  <br /></td></tr>
+<tr class="separator:a4afbaf7b8e2313965480250157e2dbcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae357bab051096d18a06465cd2aaae87d" id="r_ae357bab051096d18a06465cd2aaae87d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#ae357bab051096d18a06465cd2aaae87d">clearAliases</a> ()</td></tr>
 <tr class="memdesc:ae357bab051096d18a06465cd2aaae87d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all alias rules.  <br /></td></tr>
 <tr class="separator:ae357bab051096d18a06465cd2aaae87d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,6 +179,36 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4afbaf7b8e2313965480250157e2dbcb" name="a4afbaf7b8e2313965480250157e2dbcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4afbaf7b8e2313965480250157e2dbcb">&#9670;&#160;</a></span>addAlias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QUnitConvertor::addAlias </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>alias</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>adds one alias </p>
+
+</div>
+</div>
 <a id="a433f56e02b285daabedc08d4828e2edb" name="a433f56e02b285daabedc08d4828e2edb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a433f56e02b285daabedc08d4828e2edb">&#9670;&#160;</a></span>addConversionRule()</h2>
 
@@ -443,6 +479,26 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a family name or an empty string if unit is unknown to convertor </dd></dl>
+
+</div>
+</div>
+<a id="af61d2acd19248d08fc1c925886e01873" name="af61d2acd19248d08fc1c925886e01873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af61d2acd19248d08fc1c925886e01873">&#9670;&#160;</a></span>setAliases()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QUnitConvertor::setAliases </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_alias_dictionary.html">QAliasDictionary</a>&lt; QString &gt;&#160;</td>
+          <td class="paramname"><em>aliases</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>adds aliases from the object <a class="el" href="class_q_alias_dictionary.html" title="The QAliasDictionary class provides an alias dictionary to allow quick on-the-fly conversion of unit ...">QAliasDictionary</a> </p>
 
 </div>
 </div>
