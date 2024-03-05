@@ -1,4 +1,5 @@
 #include "qunitconvertortests.h"
+#include "qaliasdictionary.h"
 
 QUnitConvertorTests::QUnitConvertorTests(QObject *parent) : QObject(parent)
 {
@@ -103,6 +104,23 @@ void QUnitConvertorTests::addRuleTest()
     QVERIFY(convertor.family("m") == "length");
     QVERIFY(convertor.family("km") == "length");
     QVERIFY(convertor.family("mmmmm").isEmpty());
+
+}
+
+void QUnitConvertorTests::setAliasesTest()
+{
+    QAliasDictionary<QString> aliases;
+    aliases.addAlias("name", "alias1");
+    aliases.addAlias("name", "alias2");
+    aliases.addAlias("name", "alias3");
+
+    QUnitConvertor convertor;
+    convertor.setAliases(aliases);
+
+    QVERIFY(convertor.m_aliases.name("name") == "name");
+    QVERIFY(convertor.m_aliases.name("alias1") == "name");
+    QVERIFY(convertor.m_aliases.name("alias2") == "name");
+    QVERIFY(convertor.m_aliases.name("alias3") == "name");
 
 }
 

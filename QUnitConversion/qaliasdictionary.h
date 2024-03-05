@@ -15,11 +15,6 @@ class QAliasDictionary
 {
 public:
     /**
-     * @brief Default constructor
-     */
-    QAliasDictionary() = default;
-
-    /**
      * @brief Gets name by alias
      * @param alias to get name
      * @return string containing name corresponding to the given alias
