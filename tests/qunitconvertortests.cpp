@@ -1,4 +1,5 @@
 #include "qunitconvertortests.h"
+#include "qaliasdictionary.h"
 
 QUnitConvertorTests::QUnitConvertorTests(QObject *parent) : QObject(parent)
 {
@@ -103,6 +104,46 @@ void QUnitConvertorTests::addRuleTest()
     QVERIFY(convertor.family("m") == "length");
     QVERIFY(convertor.family("km") == "length");
     QVERIFY(convertor.family("mmmmm").isEmpty());
+
+}
+
+void QUnitConvertorTests::setAliasesTest()
+{
+    QUnitConvertor convertor;
+    convertor.addConversionRule(QUnitConversionRule("length", "m", "km", 0.001, 0));
+    QVERIFY(convertor.canConvert("m", "km"));
+    QVERIFY(convertor.canConvert("km", "m"));
+    QVERIFY(!convertor.canConvert("km", "meter"));
+
+    QAliasDictionary<QString> aliases;
+    aliases.addAlias("m", "m");
+    aliases.addAlias("m", "meter");
+    aliases.addAlias("m", "meters");
+
+    convertor.setAliases(aliases);
+
+    QVERIFY(convertor.canConvert("km", "meter"));
+    QVERIFY(convertor.canConvert("km", "meters"));
+
+}
+
+void QUnitConvertorTests::addAliasTest()
+{
+    QUnitConvertor convertor;
+    convertor.addConversionRule(QUnitConversionRule("length", "m", "km", 0.001, 0));
+
+    QAliasDictionary<QString> aliases;
+    aliases.addAlias("m", "m");
+    aliases.addAlias("m", "meter");
+
+    convertor.setAliases(aliases);
+
+    QVERIFY(convertor.canConvert("km", "meter"));
+    QVERIFY(!convertor.canConvert("km", "meters"));
+
+    convertor.addAlias("m", "meters");
+
+    QVERIFY(convertor.canConvert("km", "meters"));
 
 }
 

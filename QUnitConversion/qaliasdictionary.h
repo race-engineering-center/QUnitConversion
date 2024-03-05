@@ -15,11 +15,6 @@ class QAliasDictionary
 {
 public:
     /**
-     * @brief Default constructor
-     */
-    QAliasDictionary() = default;
-
-    /**
      * @brief Gets name by alias
      * @param alias to get name
      * @return string containing name corresponding to the given alias
@@ -52,10 +47,10 @@ public:
      * @param name name which will be returned if an alias requested
      * @param alias alias for the given name
      */
-    void addAlias(const String &name, const String &alias)
+    void addAlias(String name, String alias)
     {
-        m_aliases.insert(alias, name);
-        m_names.insert(name);
+        m_aliases.insert(std::move(alias), name);
+        m_names.insert(std::move(name));
     }
     /**
      * @brief Checks if a dictionary contains name for the given alias
