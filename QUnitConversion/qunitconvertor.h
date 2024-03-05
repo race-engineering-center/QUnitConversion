@@ -96,6 +96,7 @@ public:
     QStringList units(const QString &family) const;
 
     void setAliases(QAliasDictionary<QString> aliases);
+    void addAlias(QString name, QString alias);
 
 
     /**
