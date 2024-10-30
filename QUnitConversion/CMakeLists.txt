@@ -7,14 +7,7 @@ project(QUnitConversion LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED On)
 
-set(CMAKE_AUTOMOC On)
-
-set(SOURCES
-    qlinearfunction.cpp
-
-
-
-)
+set(SOURCES qlinearfunction.cpp)
 
 set(HEADERS
     qaliasdictionary.h
