@@ -81,7 +81,7 @@ public:
      * @throw std::invalid_argument if a passed rule has existing family with different base unit,
      * existing unit with different family or existing unit with a different family or base unit
      */
-    void addConversionRule(const QUnitConversionRule & rule)
+    void addConversionRule(const QUnitConversionRule<String> & rule)
     {
         if (m_baseUnitsByFamilies.contains(rule.family()) && m_baseUnitsByFamilies[rule.family()] != rule.baseUnit())
             throw std::invalid_argument("Incorrect rule added: incorrect family base unit");
@@ -91,7 +91,7 @@ public:
             throw std::invalid_argument("Incorrect rule added: incorrect unit family");
         if (!m_families.contains(rule.family()))
         {
-            QUnitConversionFamily family;
+            QUnitConversionFamily<String> family;
             family.addConversionRule(rule);
             m_families.insert(rule.family(), family);
             m_baseUnitsByFamilies.insert(rule.family(), rule.baseUnit());
@@ -210,7 +210,7 @@ public:
 protected:
     QMap<String, String> m_familiesByUnit;   ///< Key is a unit, Value is a corresponding family. Base units are also put here
     QMap<String, String> m_baseUnitsByFamilies;  ///< Key is a family name, Value is a corresponding base unit
-    QMap<String, QUnitConversionFamily> m_families;   ///< Key is a family name, Value is a family
+    QMap<String, QUnitConversionFamily<String>> m_families;   ///< Key is a family name, Value is a family
     QAliasDictionary<String> m_aliases;
 };
 

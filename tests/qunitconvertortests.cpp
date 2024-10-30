@@ -21,7 +21,7 @@ QUnitConvertorTests::QUnitConvertorTests(QObject *parent) : QObject(parent)
 void QUnitConvertorTests::addRuleTest()
 {
     QUnitConvertor<QString> convertor;
-    convertor.addConversionRule(QUnitConversionRule("length", "m", "km", 0.001, 0));
+    convertor.addConversionRule(QUnitConversionRule<QString>("length", "m", "km", 0.001, 0));
     QVERIFY(convertor.m_families.contains("length"));
     QVERIFY(convertor.m_baseUnitsByFamilies.contains("length"));
     QVERIFY(convertor.m_familiesByUnit.contains("m"));
@@ -30,7 +30,7 @@ void QUnitConvertorTests::addRuleTest()
     QVERIFY(convertor.m_families.size() == 1);
     QVERIFY(convertor.m_baseUnitsByFamilies.size() == 1);
 
-    convertor.addConversionRule(QUnitConversionRule("length", "m", "cm", 100, 0));
+    convertor.addConversionRule(QUnitConversionRule<QString>("length", "m", "cm", 100, 0));
     QVERIFY(convertor.m_familiesByUnit.contains("m"));
     QVERIFY(convertor.m_familiesByUnit.contains("km"));
     QVERIFY(convertor.m_familiesByUnit.contains("cm"));
@@ -38,7 +38,7 @@ void QUnitConvertorTests::addRuleTest()
     QVERIFY(convertor.m_families.size() == 1);
     QVERIFY(convertor.m_baseUnitsByFamilies.size() == 1);
 
-    convertor.addConversionRule(QUnitConversionRule("length", "m", "mm", 1000, 0));
+    convertor.addConversionRule(QUnitConversionRule<QString>("length", "m", "mm", 1000, 0));
     QVERIFY(convertor.m_familiesByUnit.contains("m"));
     QVERIFY(convertor.m_familiesByUnit.contains("km"));
     QVERIFY(convertor.m_familiesByUnit.contains("cm"));
@@ -48,13 +48,13 @@ void QUnitConvertorTests::addRuleTest()
     QVERIFY(convertor.m_baseUnitsByFamilies.size() == 1);
 
     // passing existing family with a differnt base unit
-    QVERIFY_THROWS_EXCEPTION(std::invalid_argument, convertor.addConversionRule(QUnitConversionRule("length", "km", "m", 1000, 0)));
+    QVERIFY_THROWS_EXCEPTION(std::invalid_argument, convertor.addConversionRule(QUnitConversionRule<QString>("length", "km", "m", 1000, 0)));
 
     // passing a different family with an existing base unit
-    QVERIFY_THROWS_EXCEPTION(std::invalid_argument, convertor.addConversionRule(QUnitConversionRule("notlength", "m", "km", 0.001, 0)));
+    QVERIFY_THROWS_EXCEPTION(std::invalid_argument, convertor.addConversionRule(QUnitConversionRule<QString>("notlength", "m", "km", 0.001, 0)));
 
     // passing the same conversion once again should work
-    convertor.addConversionRule(QUnitConversionRule("length", "m", "mm", 1000, 0));
+    convertor.addConversionRule(QUnitConversionRule<QString>("length", "m", "mm", 1000, 0));
 
     // let's make sure that none of containers did change
     QVERIFY(convertor.m_familiesByUnit.size() == 4);
@@ -63,7 +63,7 @@ void QUnitConvertorTests::addRuleTest()
 
     // note "min" here, since we have to make sure that all unit names are different
     // we need to differ minutes from meters
-    convertor.addConversionRule(QUnitConversionRule("time", "s", "min", double(1) / 60, 0));
+    convertor.addConversionRule(QUnitConversionRule<QString>("time", "s", "min", double(1) / 60, 0));
     QVERIFY(convertor.m_families.contains("length"));
     QVERIFY(convertor.m_families.contains("time"));
     QVERIFY(convertor.m_families.size() == 2);
@@ -122,7 +122,7 @@ void QUnitConvertorTests::addRuleTest()
 void QUnitConvertorTests::setAliasesTest()
 {
     QUnitConvertor<QString> convertor;
-    convertor.addConversionRule(QUnitConversionRule("length", "m", "km", 0.001, 0));
+    convertor.addConversionRule(QUnitConversionRule<QString>("length", "m", "km", 0.001, 0));
     QVERIFY(convertor.canConvert("m", "km"));
     QVERIFY(convertor.canConvert("km", "m"));
     QVERIFY(!convertor.canConvert("km", "meter"));
@@ -142,7 +142,7 @@ void QUnitConvertorTests::setAliasesTest()
 void QUnitConvertorTests::addAliasTest()
 {
     QUnitConvertor<QString> convertor;
-    convertor.addConversionRule(QUnitConversionRule("length", "m", "km", 0.001, 0));
+    convertor.addConversionRule(QUnitConversionRule<QString>("length", "m", "km", 0.001, 0));
 
     QAliasDictionary<QString> aliases;
     aliases.addAlias("m", "m");
