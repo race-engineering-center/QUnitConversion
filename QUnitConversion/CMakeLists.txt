@@ -13,7 +13,7 @@ set(SOURCES
     qlinearfunction.cpp
     qunitconversionfamily.cpp
     qunitconversionrule.cpp
-    qunitconvertor.cpp
+
 )
 
 set(HEADERS

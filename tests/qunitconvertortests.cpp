@@ -1,6 +1,18 @@
 #include "qunitconvertortests.h"
 #include "qaliasdictionary.h"
 
+#include <algorithm>
+
+namespace {
+
+template <template <typename, typename> class Container, typename Key, typename Value>
+bool contains(const Container<Key, Value>& container, const Key& key)
+{
+    return std::find(container.begin(), container.end(), key) != container.end();
+}
+
+}
+
 QUnitConvertorTests::QUnitConvertorTests(QObject *parent) : QObject(parent)
 {
 
@@ -8,7 +20,7 @@ QUnitConvertorTests::QUnitConvertorTests(QObject *parent) : QObject(parent)
 
 void QUnitConvertorTests::addRuleTest()
 {
-    QUnitConvertor convertor;
+    QUnitConvertor<QString> convertor;
     convertor.addConversionRule(QUnitConversionRule("length", "m", "km", 0.001, 0));
     QVERIFY(convertor.m_families.contains("length"));
     QVERIFY(convertor.m_baseUnitsByFamilies.contains("length"));
@@ -66,16 +78,16 @@ void QUnitConvertorTests::addRuleTest()
     QVERIFY(convertor.m_baseUnitsByFamilies["length"] == "m");
     QVERIFY(convertor.m_baseUnitsByFamilies["time"] == "s");
 
-    QStringList families = convertor.families();
-    QVERIFY(families.contains("length"));
-    QVERIFY(families.contains("time"));
+    auto families = convertor.families();
+    QVERIFY(contains(families, QStringLiteral("length")));
+    QVERIFY(contains(families, QStringLiteral("time")));
 
-    QStringList units = convertor.units("length");
-    QVERIFY(units.size() == 4);
-    QVERIFY(units.contains("m"));
-    QVERIFY(units.contains("km"));
-    QVERIFY(units.contains("cm"));
-    QVERIFY(units.contains("mm"));
+    auto units = convertor.units("length");
+    QCOMPARE(units.size(), 4);
+    QVERIFY(contains(units, QStringLiteral("m")));
+    QVERIFY(contains(units, QStringLiteral("km")));
+    QVERIFY(contains(units, QStringLiteral("cm")));
+    QVERIFY(contains(units, QStringLiteral("mm")));
 
     QVERIFY(qFuzzyCompare(convertor.convert(0, "m", "km"), 0));
     QVERIFY(qFuzzyCompare(convertor.convert(50, "m", "km"), 0.05));
@@ -84,22 +96,22 @@ void QUnitConvertorTests::addRuleTest()
     QVERIFY(qFuzzyCompare(convertor.convert(500, "cm", "km"), 0.005));
     QVERIFY(qFuzzyCompare(convertor.convert(500, "m", "m"), 500));
 
-    QStringList conversions = convertor.conversions("m");
-    QVERIFY(conversions.contains("m"));
-    QVERIFY(conversions.contains("km"));
-    QVERIFY(conversions.contains("cm"));
-    QVERIFY(conversions.contains("mm"));
+    auto conversions = convertor.conversions("m");
+    QVERIFY(contains(conversions, QStringLiteral("m")));
+    QVERIFY(contains(conversions, QStringLiteral("km")));
+    QVERIFY(contains(conversions, QStringLiteral("cm")));
+    QVERIFY(contains(conversions, QStringLiteral("mm")));
     QVERIFY(conversions.size() == 4);
 
     conversions = convertor.conversions("mm");
-    QVERIFY(conversions.contains("m"));
-    QVERIFY(conversions.contains("km"));
-    QVERIFY(conversions.contains("cm"));
-    QVERIFY(conversions.contains("mm"));
+    QVERIFY(contains(conversions, QStringLiteral("m")));
+    QVERIFY(contains(conversions, QStringLiteral("km")));
+    QVERIFY(contains(conversions, QStringLiteral("cm")));
+    QVERIFY(contains(conversions, QStringLiteral("mm")));
     QVERIFY(conversions.size() == 4);
 
     conversions = convertor.conversions("mmmm");
-    QVERIFY(conversions.isEmpty());
+    QVERIFY(conversions.empty());
 
     QVERIFY(convertor.family("m") == "length");
     QVERIFY(convertor.family("km") == "length");
@@ -109,7 +121,7 @@ void QUnitConvertorTests::addRuleTest()
 
 void QUnitConvertorTests::setAliasesTest()
 {
-    QUnitConvertor convertor;
+    QUnitConvertor<QString> convertor;
     convertor.addConversionRule(QUnitConversionRule("length", "m", "km", 0.001, 0));
     QVERIFY(convertor.canConvert("m", "km"));
     QVERIFY(convertor.canConvert("km", "m"));
@@ -129,7 +141,7 @@ void QUnitConvertorTests::setAliasesTest()
 
 void QUnitConvertorTests::addAliasTest()
 {
-    QUnitConvertor convertor;
+    QUnitConvertor<QString> convertor;
     convertor.addConversionRule(QUnitConversionRule("length", "m", "km", 0.001, 0));
 
     QAliasDictionary<QString> aliases;

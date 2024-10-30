@@ -1,8 +1,6 @@
 #ifndef QLINEARFUNCTION_H
 #define QLINEARFUNCTION_H
 
-#include <QtGlobal>
-
 /**
  * @brief The QLinearFunction class describes a linear function
  * with a format of Y = k*X + b
