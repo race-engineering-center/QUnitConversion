@@ -49,11 +49,13 @@ public:
             actualOut = m_aliases.name(out);
         else
             actualOut = out;
-        String inFamily = m_familiesByUnit.value(actualIn);
+        auto inFamilyIt = m_familiesByUnit.find(actualIn);
+
         String outFamily = m_familiesByUnit.value(actualOut);
-        if (inFamily.isEmpty() || inFamily != outFamily)
+        if (inFamilyIt == m_familiesByUnit.end() || inFamilyIt.value() != outFamily)
             return {};
-        return m_families[inFamily].convert(actualIn, actualOut);
+
+        return m_families[inFamilyIt.value()].convert(actualIn, actualOut);
     }
 
     /**

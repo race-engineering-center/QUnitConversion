@@ -3,6 +3,8 @@
 
 #include <algorithm>
 
+using String = QString;
+
 namespace {
 
 template <template <typename, typename> class Container, typename Key, typename Value>
@@ -20,8 +22,8 @@ QUnitConvertorTests::QUnitConvertorTests(QObject *parent) : QObject(parent)
 
 void QUnitConvertorTests::addRuleTest()
 {
-    QUnitConvertor<QString> convertor;
-    convertor.addConversionRule(QUnitConversionRule<QString>("length", "m", "km", 0.001, 0));
+    QUnitConvertor<String> convertor;
+    convertor.addConversionRule(QUnitConversionRule<String>("length", "m", "km", 0.001, 0));
     QVERIFY(convertor.m_families.contains("length"));
     QVERIFY(convertor.m_baseUnitsByFamilies.contains("length"));
     QVERIFY(convertor.m_familiesByUnit.contains("m"));
@@ -30,7 +32,7 @@ void QUnitConvertorTests::addRuleTest()
     QVERIFY(convertor.m_families.size() == 1);
     QVERIFY(convertor.m_baseUnitsByFamilies.size() == 1);
 
-    convertor.addConversionRule(QUnitConversionRule<QString>("length", "m", "cm", 100, 0));
+    convertor.addConversionRule(QUnitConversionRule<String>("length", "m", "cm", 100, 0));
     QVERIFY(convertor.m_familiesByUnit.contains("m"));
     QVERIFY(convertor.m_familiesByUnit.contains("km"));
     QVERIFY(convertor.m_familiesByUnit.contains("cm"));
@@ -38,7 +40,7 @@ void QUnitConvertorTests::addRuleTest()
     QVERIFY(convertor.m_families.size() == 1);
     QVERIFY(convertor.m_baseUnitsByFamilies.size() == 1);
 
-    convertor.addConversionRule(QUnitConversionRule<QString>("length", "m", "mm", 1000, 0));
+    convertor.addConversionRule(QUnitConversionRule<String>("length", "m", "mm", 1000, 0));
     QVERIFY(convertor.m_familiesByUnit.contains("m"));
     QVERIFY(convertor.m_familiesByUnit.contains("km"));
     QVERIFY(convertor.m_familiesByUnit.contains("cm"));
@@ -48,13 +50,13 @@ void QUnitConvertorTests::addRuleTest()
     QVERIFY(convertor.m_baseUnitsByFamilies.size() == 1);
 
     // passing existing family with a differnt base unit
-    QVERIFY_THROWS_EXCEPTION(std::invalid_argument, convertor.addConversionRule(QUnitConversionRule<QString>("length", "km", "m", 1000, 0)));
+    QVERIFY_THROWS_EXCEPTION(std::invalid_argument, convertor.addConversionRule(QUnitConversionRule<String>("length", "km", "m", 1000, 0)));
 
     // passing a different family with an existing base unit
-    QVERIFY_THROWS_EXCEPTION(std::invalid_argument, convertor.addConversionRule(QUnitConversionRule<QString>("notlength", "m", "km", 0.001, 0)));
+    QVERIFY_THROWS_EXCEPTION(std::invalid_argument, convertor.addConversionRule(QUnitConversionRule<String>("notlength", "m", "km", 0.001, 0)));
 
     // passing the same conversion once again should work
-    convertor.addConversionRule(QUnitConversionRule<QString>("length", "m", "mm", 1000, 0));
+    convertor.addConversionRule(QUnitConversionRule<String>("length", "m", "mm", 1000, 0));
 
     // let's make sure that none of containers did change
     QVERIFY(convertor.m_familiesByUnit.size() == 4);
@@ -63,7 +65,7 @@ void QUnitConvertorTests::addRuleTest()
 
     // note "min" here, since we have to make sure that all unit names are different
     // we need to differ minutes from meters
-    convertor.addConversionRule(QUnitConversionRule<QString>("time", "s", "min", double(1) / 60, 0));
+    convertor.addConversionRule(QUnitConversionRule<String>("time", "s", "min", double(1) / 60, 0));
     QVERIFY(convertor.m_families.contains("length"));
     QVERIFY(convertor.m_families.contains("time"));
     QVERIFY(convertor.m_families.size() == 2);
@@ -79,15 +81,15 @@ void QUnitConvertorTests::addRuleTest()
     QVERIFY(convertor.m_baseUnitsByFamilies["time"] == "s");
 
     auto families = convertor.families();
-    QVERIFY(contains(families, QStringLiteral("length")));
-    QVERIFY(contains(families, QStringLiteral("time")));
+    QVERIFY(contains(families, String("length")));
+    QVERIFY(contains(families, String("time")));
 
     auto units = convertor.units("length");
     QCOMPARE(units.size(), 4);
-    QVERIFY(contains(units, QStringLiteral("m")));
-    QVERIFY(contains(units, QStringLiteral("km")));
-    QVERIFY(contains(units, QStringLiteral("cm")));
-    QVERIFY(contains(units, QStringLiteral("mm")));
+    QVERIFY(contains(units, String("m")));
+    QVERIFY(contains(units, String("km")));
+    QVERIFY(contains(units, String("cm")));
+    QVERIFY(contains(units, String("mm")));
 
     QVERIFY(qFuzzyCompare(convertor.convert(0, "m", "km"), 0));
     QVERIFY(qFuzzyCompare(convertor.convert(50, "m", "km"), 0.05));
@@ -97,17 +99,17 @@ void QUnitConvertorTests::addRuleTest()
     QVERIFY(qFuzzyCompare(convertor.convert(500, "m", "m"), 500));
 
     auto conversions = convertor.conversions("m");
-    QVERIFY(contains(conversions, QStringLiteral("m")));
-    QVERIFY(contains(conversions, QStringLiteral("km")));
-    QVERIFY(contains(conversions, QStringLiteral("cm")));
-    QVERIFY(contains(conversions, QStringLiteral("mm")));
+    QVERIFY(contains(conversions, String("m")));
+    QVERIFY(contains(conversions, String("km")));
+    QVERIFY(contains(conversions, String("cm")));
+    QVERIFY(contains(conversions, String("mm")));
     QVERIFY(conversions.size() == 4);
 
     conversions = convertor.conversions("mm");
-    QVERIFY(contains(conversions, QStringLiteral("m")));
-    QVERIFY(contains(conversions, QStringLiteral("km")));
-    QVERIFY(contains(conversions, QStringLiteral("cm")));
-    QVERIFY(contains(conversions, QStringLiteral("mm")));
+    QVERIFY(contains(conversions, String("m")));
+    QVERIFY(contains(conversions, String("km")));
+    QVERIFY(contains(conversions, String("cm")));
+    QVERIFY(contains(conversions, String("mm")));
     QVERIFY(conversions.size() == 4);
 
     conversions = convertor.conversions("mmmm");
@@ -115,19 +117,19 @@ void QUnitConvertorTests::addRuleTest()
 
     QVERIFY(convertor.family("m") == "length");
     QVERIFY(convertor.family("km") == "length");
-    QVERIFY(convertor.family("mmmmm").isEmpty());
+    QVERIFY(convertor.family("mmmmm") == String());
 
 }
 
 void QUnitConvertorTests::setAliasesTest()
 {
-    QUnitConvertor<QString> convertor;
-    convertor.addConversionRule(QUnitConversionRule<QString>("length", "m", "km", 0.001, 0));
+    QUnitConvertor<String> convertor;
+    convertor.addConversionRule(QUnitConversionRule<String>("length", "m", "km", 0.001, 0));
     QVERIFY(convertor.canConvert("m", "km"));
     QVERIFY(convertor.canConvert("km", "m"));
     QVERIFY(!convertor.canConvert("km", "meter"));
 
-    QAliasDictionary<QString> aliases;
+    QAliasDictionary<String> aliases;
     aliases.addAlias("m", "m");
     aliases.addAlias("m", "meter");
     aliases.addAlias("m", "meters");
@@ -141,10 +143,10 @@ void QUnitConvertorTests::setAliasesTest()
 
 void QUnitConvertorTests::addAliasTest()
 {
-    QUnitConvertor<QString> convertor;
-    convertor.addConversionRule(QUnitConversionRule<QString>("length", "m", "km", 0.001, 0));
+    QUnitConvertor<String> convertor;
+    convertor.addConversionRule(QUnitConversionRule<String>("length", "m", "km", 0.001, 0));
 
-    QAliasDictionary<QString> aliases;
+    QAliasDictionary<String> aliases;
     aliases.addAlias("m", "m");
     aliases.addAlias("m", "meter");
 
