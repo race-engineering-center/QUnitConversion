@@ -2,13 +2,11 @@
 
 ## Overview
 
-`QUnitConversion` is a simple lightweight library providing tools for runtime unit conversion built on top of Qt5 Framework.
+`QUnitConversion` is a simple lightweight library providing tools for runtime unit conversion built on top of Qt Framework.
 
 `QUnitConversion` stores units as strings grouped by "family" (for example length or temperature). 
 Each family has its own base unit, conversion inside a family is performed by converting through base unit
-providing conversion from any unit to any other unit in a family. Conversion rules can be added dynamically
-and/or loaded from JSON-formatted string so you can add your own conversions if needed. An example of 
-an input JSON file is provided in `test/testdata/conversion_rules.json`.
+providing conversion from any unit to any other unit in a family.
 
 Note that each unit should have a unique name, as long as conversion is unit name-based.
 
@@ -33,7 +31,7 @@ convertor.addConversionRule(QUnitConversionRule("length", "m", "cm", 100, 0));
 double km = convertor.convert(50, "km", "m");   // returns value of a 50 km converted to meters
 
 // or get a linear function that holds conversion from one unit to another
-// to apply this convertion to many numbers without finding a conversion each time 
+// to apply this conversion to many numbers without finding a conversion each time 
 QLinearFunction convertFunction = convertor.convert("m", "km");
 std::vector<double> meters;
 // meters is filled here...
@@ -45,26 +43,10 @@ for (double m: meters)
 ### Aliases:
 
 `QUnitConversion` supports aliases for units with possible conversion on the fly, so you km/h, kmph and kmh 
-will be converted to m/s properly. Also this example illustrates loading conversions and aliases from
-JSON-formatted file.
+will be converted to m/s properly. 
 
-```cpp
-QUnitConvertor convertor;
-
-// load conversion rules from JSON
-QFile conversions("conversion_rules.json");
-conversions.open(QIODevice::ReadOnly);
-convertor.loadFromJson(QJsonDocument::fromJson(conversions.readAll()).object());
-
-// load aliases for unit names from JSON
-QFile aliases("aliases.json");
-aliases.open(QIODevice::ReadOnly);
-convertor.loadAliasesFromJson(QJsonDocument::fromJson(aliases.readAll()).object());
-
-double km;
-km = convertor.convert(50, "km", "m");   // returns value of a 50 km converted to meters
-km = convertor.convert(50, "km", "meter");  // "meter" is an alias for "m" written in loaded json
-km = convertor.convert(50, "km", "meters"); // and "meters" a as well
+```
+// TODO: add updated alias example
 ```
 
 ## License
@@ -78,4 +60,4 @@ km = convertor.convert(50, "km", "meters"); // and "meters" a as well
 | `./QUnitConversion` | Library source code.           |
 | `./tests`           | Unittests code.                |
 
-Copyright Dmitriy Linev 2020-2022
+Copyright Dmitriy Linev 2020-2024
