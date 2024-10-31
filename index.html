@@ -74,54 +74,39 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a> </p><h1>Overview</h1>
-<p><code>QUnitConversion</code> is a simple lightweight library providing tools for runtime unit conversion built on top of Qt5 Framework.</p>
-<p><code>QUnitConversion</code> stores units as strings grouped by "family" (for example length or temperature). Each family has its own base unit, conversion inside a family is performed by converting through base unit providing conversion from any unit to any other unit in a family. Conversion rules can be added dynamically and/or loaded from JSON-formatted string so you can add your own conversions if needed. An example of an input JSON file is provided in <code>test/testdata/conversion_rules.json</code>.</p>
+<p><code>QUnitConversion</code> is a simple lightweight library providing tools for runtime unit conversion built on top of Qt Framework.</p>
+<p><code>QUnitConversion</code> stores units as strings grouped by "family" (for example length or temperature). Each family has its own base unit, conversion inside a family is performed by converting through base unit providing conversion from any unit to any other unit in a family.</p>
 <p>Note that each unit should have a unique name, as long as conversion is unit name-based.</p>
 <p><code>QUnitConversion</code> supports aliases for unit names, see aliases example below.</p>
 <h1>Documentation</h1>
 <p>Documentation is available <a href="https://beardedbeaver.github.io/QUnitConversion/index.html">here</a></p>
 <h1>Examples</h1>
 <h2>Basic usage:</h2>
-<div class="fragment"><div class="line"><a class="code hl_class" href="class_q_unit_convertor.html">QUnitConvertor</a> convertor;</div>
+<div class="fragment"><div class="line"><a class="code hl_class" href="class_q_unit_convertor.html">QUnitConvertor&lt;QString&gt;</a> convertor;</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// fill the convertor instance with rules</span></div>
-<div class="line">convertor.<a class="code hl_function" href="class_q_unit_convertor.html#a433f56e02b285daabedc08d4828e2edb">addConversionRule</a>(<a class="code hl_class" href="class_q_unit_conversion_rule.html">QUnitConversionRule</a>(<span class="stringliteral">&quot;length&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>, <span class="stringliteral">&quot;km&quot;</span>, 0.001, 0));</div>
-<div class="line">convertor.<a class="code hl_function" href="class_q_unit_convertor.html#a433f56e02b285daabedc08d4828e2edb">addConversionRule</a>(<a class="code hl_class" href="class_q_unit_conversion_rule.html">QUnitConversionRule</a>(<span class="stringliteral">&quot;length&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>, <span class="stringliteral">&quot;cm&quot;</span>, 100, 0));</div>
+<div class="line">convertor.<a class="code hl_function" href="class_q_unit_convertor.html#a403156f7e5ac50f9b6ef314a413edd70">addConversionRule</a>(<a class="code hl_class" href="class_q_unit_conversion_rule.html">QUnitConversionRule</a>(<span class="stringliteral">&quot;length&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>, <span class="stringliteral">&quot;km&quot;</span>, 0.001, 0));</div>
+<div class="line">convertor.<a class="code hl_function" href="class_q_unit_convertor.html#a403156f7e5ac50f9b6ef314a413edd70">addConversionRule</a>(<a class="code hl_class" href="class_q_unit_conversion_rule.html">QUnitConversionRule</a>(<span class="stringliteral">&quot;length&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>, <span class="stringliteral">&quot;cm&quot;</span>, 100, 0));</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// you can convert a single value</span></div>
-<div class="line"><span class="keywordtype">double</span> km = convertor.<a class="code hl_function" href="class_q_unit_convertor.html#a98b3edf83ef0f7742e6e14bcdba06ee3">convert</a>(50, <span class="stringliteral">&quot;km&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>);   <span class="comment">// returns value of a 50 km converted to meters</span></div>
+<div class="line"><span class="keywordtype">double</span> km = convertor.<a class="code hl_function" href="class_q_unit_convertor.html#a816fae2fe8cc113e88ab550a40a2e6ac">convert</a>(50, <span class="stringliteral">&quot;km&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>);   <span class="comment">// returns value of a 50 km converted to meters</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// or get a linear function that holds conversion from one unit to another</span></div>
-<div class="line"><span class="comment">// to apply this convertion to many numbers without finding a conversion each time </span></div>
-<div class="line"><a class="code hl_class" href="class_q_linear_function.html">QLinearFunction</a> convertFunction = convertor.<a class="code hl_function" href="class_q_unit_convertor.html#a98b3edf83ef0f7742e6e14bcdba06ee3">convert</a>(<span class="stringliteral">&quot;m&quot;</span>, <span class="stringliteral">&quot;km&quot;</span>);</div>
+<div class="line"><span class="comment">// to apply this conversion to many numbers without finding a conversion each time </span></div>
+<div class="line"><a class="code hl_class" href="class_q_linear_function.html">QLinearFunction</a> convertFunction = convertor.<a class="code hl_function" href="class_q_unit_convertor.html#a816fae2fe8cc113e88ab550a40a2e6ac">convert</a>(<span class="stringliteral">&quot;m&quot;</span>, <span class="stringliteral">&quot;km&quot;</span>);</div>
 <div class="line">std::vector&lt;double&gt; meters;</div>
 <div class="line"><span class="comment">// meters is filled here...</span></div>
 <div class="line">std::vector&lt;double&gt; kilometers;</div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">double</span> m: meters)</div>
 <div class="line">    kilometers.push_back(convertFunction.y(m));</div>
-<div class="ttc" id="aclass_q_linear_function_html"><div class="ttname"><a href="class_q_linear_function.html">QLinearFunction</a></div><div class="ttdoc">The QLinearFunction class describes a linear function with a format of Y = k*X + b.</div><div class="ttdef"><b>Definition</b> qlinearfunction.h:11</div></div>
-<div class="ttc" id="aclass_q_unit_conversion_rule_html"><div class="ttname"><a href="class_q_unit_conversion_rule.html">QUnitConversionRule</a></div><div class="ttdoc">The QUnitConversionRule class represents a unit conversion rule from base unit to second unit within ...</div><div class="ttdef"><b>Definition</b> qunitconversionrule.h:15</div></div>
-<div class="ttc" id="aclass_q_unit_convertor_html"><div class="ttname"><a href="class_q_unit_convertor.html">QUnitConvertor</a></div><div class="ttdoc">The QUnitConvertor class provides tool for converting units stored in a string form....</div><div class="ttdef"><b>Definition</b> qunitconvertor.h:18</div></div>
-<div class="ttc" id="aclass_q_unit_convertor_html_a433f56e02b285daabedc08d4828e2edb"><div class="ttname"><a href="class_q_unit_convertor.html#a433f56e02b285daabedc08d4828e2edb">QUnitConvertor::addConversionRule</a></div><div class="ttdeci">void addConversionRule(const QUnitConversionRule &amp;rule)</div><div class="ttdoc">Adds a conversion rule to convertor.</div><div class="ttdef"><b>Definition</b> qunitconvertor.cpp:36</div></div>
-<div class="ttc" id="aclass_q_unit_convertor_html_a98b3edf83ef0f7742e6e14bcdba06ee3"><div class="ttname"><a href="class_q_unit_convertor.html#a98b3edf83ef0f7742e6e14bcdba06ee3">QUnitConvertor::convert</a></div><div class="ttdeci">QLinearFunction convert(const QString &amp;in, const QString &amp;out) const</div><div class="ttdoc">Converts from in unit to out unit.</div><div class="ttdef"><b>Definition</b> qunitconvertor.cpp:8</div></div>
+<div class="ttc" id="aclass_q_linear_function_html"><div class="ttname"><a href="class_q_linear_function.html">QLinearFunction</a></div><div class="ttdoc">The QLinearFunction class describes a linear function with a format of Y = k*X + b.</div><div class="ttdef"><b>Definition</b> qlinearfunction.h:9</div></div>
+<div class="ttc" id="aclass_q_unit_conversion_rule_html"><div class="ttname"><a href="class_q_unit_conversion_rule.html">QUnitConversionRule</a></div><div class="ttdoc">The QUnitConversionRule class represents a unit conversion rule from base unit to second unit within ...</div><div class="ttdef"><b>Definition</b> qunitconversionrule.h:16</div></div>
+<div class="ttc" id="aclass_q_unit_convertor_html"><div class="ttname"><a href="class_q_unit_convertor.html">QUnitConvertor</a></div><div class="ttdoc">The QUnitConvertor class provides tool for converting units stored in a string form....</div><div class="ttdef"><b>Definition</b> qunitconvertor.h:19</div></div>
+<div class="ttc" id="aclass_q_unit_convertor_html_a403156f7e5ac50f9b6ef314a413edd70"><div class="ttname"><a href="class_q_unit_convertor.html#a403156f7e5ac50f9b6ef314a413edd70">QUnitConvertor::addConversionRule</a></div><div class="ttdeci">void addConversionRule(const QUnitConversionRule&lt; String &gt; &amp;rule)</div><div class="ttdoc">Adds a conversion rule to convertor.</div><div class="ttdef"><b>Definition</b> qunitconvertor.h:86</div></div>
+<div class="ttc" id="aclass_q_unit_convertor_html_a816fae2fe8cc113e88ab550a40a2e6ac"><div class="ttname"><a href="class_q_unit_convertor.html#a816fae2fe8cc113e88ab550a40a2e6ac">QUnitConvertor::convert</a></div><div class="ttdeci">QLinearFunction convert(const String &amp;in, const String &amp;out) const</div><div class="ttdoc">Converts from in unit to out unit.</div><div class="ttdef"><b>Definition</b> qunitconvertor.h:39</div></div>
 </div><!-- fragment --><h2>Aliases:</h2>
-<p><code>QUnitConversion</code> supports aliases for units with possible conversion on the fly, so you km/h, kmph and kmh will be converted to m/s properly. Also this example illustrates loading conversions and aliases from JSON-formatted file.</p>
-<div class="fragment"><div class="line"><a class="code hl_class" href="class_q_unit_convertor.html">QUnitConvertor</a> convertor;</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// load conversion rules from JSON</span></div>
-<div class="line">QFile conversions(<span class="stringliteral">&quot;conversion_rules.json&quot;</span>);</div>
-<div class="line">conversions.open(QIODevice::ReadOnly);</div>
-<div class="line">convertor.loadFromJson(QJsonDocument::fromJson(conversions.readAll()).object());</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// load aliases for unit names from JSON</span></div>
-<div class="line">QFile aliases(<span class="stringliteral">&quot;aliases.json&quot;</span>);</div>
-<div class="line">aliases.open(QIODevice::ReadOnly);</div>
-<div class="line">convertor.loadAliasesFromJson(QJsonDocument::fromJson(aliases.readAll()).object());</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">double</span> km;</div>
-<div class="line">km = convertor.<a class="code hl_function" href="class_q_unit_convertor.html#a98b3edf83ef0f7742e6e14bcdba06ee3">convert</a>(50, <span class="stringliteral">&quot;km&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>);   <span class="comment">// returns value of a 50 km converted to meters</span></div>
-<div class="line">km = convertor.<a class="code hl_function" href="class_q_unit_convertor.html#a98b3edf83ef0f7742e6e14bcdba06ee3">convert</a>(50, <span class="stringliteral">&quot;km&quot;</span>, <span class="stringliteral">&quot;meter&quot;</span>);  <span class="comment">// &quot;meter&quot; is an alias for &quot;m&quot; written in loaded json</span></div>
-<div class="line">km = convertor.<a class="code hl_function" href="class_q_unit_convertor.html#a98b3edf83ef0f7742e6e14bcdba06ee3">convert</a>(50, <span class="stringliteral">&quot;km&quot;</span>, <span class="stringliteral">&quot;meters&quot;</span>); <span class="comment">// and &quot;meters&quot; a as well</span></div>
+<p><code>QUnitConversion</code> supports aliases for units with possible conversion on the fly, so you km/h, kmph and kmh will be converted to m/s properly.</p>
+<div class="fragment"><div class="line">// TODO: add updated alias example</div>
 </div><!-- fragment --><h1>License</h1>
 <p><code>QUnitConversion</code> is distributed under MIT license</p>
 <h1>Repo contents</h1>
@@ -133,7 +118,7 @@ $(function() {
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>./tests</code>   </td><td class="markdownTableBodyNone">Unittests code.   </td></tr>
 </table>
-<p>Copyright Dmitriy Linev 2020-2022 </p>
+<p>Copyright Dmitriy Linev 2020-2024 </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

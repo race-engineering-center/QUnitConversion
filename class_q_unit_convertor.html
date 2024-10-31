@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QUnitConversion: QUnitConvertor Class Reference</title>
+<title>QUnitConversion: QUnitConvertor&lt; String &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,7 +75,7 @@ $(function() {
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="class_q_unit_convertor-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">QUnitConvertor Class Reference</div></div>
+  <div class="headertitle"><div class="title">QUnitConvertor&lt; String &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -86,62 +86,59 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae1b74bed8a9b7330c0c72fa7bcefe90d" id="r_ae1b74bed8a9b7330c0c72fa7bcefe90d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#ae1b74bed8a9b7330c0c72fa7bcefe90d">QUnitConvertor</a> ()=default</td></tr>
-<tr class="memdesc:ae1b74bed8a9b7330c0c72fa7bcefe90d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
-<tr class="separator:ae1b74bed8a9b7330c0c72fa7bcefe90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab07b3abe2694a1d05702f67771099aea" id="r_ab07b3abe2694a1d05702f67771099aea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#ab07b3abe2694a1d05702f67771099aea">canConvert</a> (const QString &amp;in, const QString &amp;out) const</td></tr>
-<tr class="memdesc:ab07b3abe2694a1d05702f67771099aea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if unit conversion from in unit to out unit is possible.  <br /></td></tr>
-<tr class="separator:ab07b3abe2694a1d05702f67771099aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98b3edf83ef0f7742e6e14bcdba06ee3" id="r_a98b3edf83ef0f7742e6e14bcdba06ee3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_linear_function.html">QLinearFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a98b3edf83ef0f7742e6e14bcdba06ee3">convert</a> (const QString &amp;in, const QString &amp;out) const</td></tr>
-<tr class="memdesc:a98b3edf83ef0f7742e6e14bcdba06ee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts from in unit to out unit.  <br /></td></tr>
-<tr class="separator:a98b3edf83ef0f7742e6e14bcdba06ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb8f9a87f53cce10dbbadee7c7706cae" id="r_acb8f9a87f53cce10dbbadee7c7706cae"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#acb8f9a87f53cce10dbbadee7c7706cae">convert</a> (double value, const QString &amp;in, const QString &amp;out, double defaultValue=NAN) const</td></tr>
-<tr class="memdesc:acb8f9a87f53cce10dbbadee7c7706cae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a given value from in unit to out unit.  <br /></td></tr>
-<tr class="separator:acb8f9a87f53cce10dbbadee7c7706cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a433f56e02b285daabedc08d4828e2edb" id="r_a433f56e02b285daabedc08d4828e2edb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a433f56e02b285daabedc08d4828e2edb">addConversionRule</a> (const <a class="el" href="class_q_unit_conversion_rule.html">QUnitConversionRule</a> &amp;rule)</td></tr>
-<tr class="memdesc:a433f56e02b285daabedc08d4828e2edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a conversion rule to convertor.  <br /></td></tr>
-<tr class="separator:a433f56e02b285daabedc08d4828e2edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ea79b857b145dbf99cd360fe4138d8e" id="r_a8ea79b857b145dbf99cd360fe4138d8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a8ea79b857b145dbf99cd360fe4138d8e">clear</a> ()</td></tr>
-<tr class="memdesc:a8ea79b857b145dbf99cd360fe4138d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears unit convertor removing all unit conversion rules.  <br /></td></tr>
-<tr class="separator:a8ea79b857b145dbf99cd360fe4138d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a4e38b6930b3a37e7ab3142f1947b41" id="r_a4a4e38b6930b3a37e7ab3142f1947b41"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a4a4e38b6930b3a37e7ab3142f1947b41">families</a> () const</td></tr>
-<tr class="memdesc:a4a4e38b6930b3a37e7ab3142f1947b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method provides access to a list of families of units in this convertor.  <br /></td></tr>
-<tr class="separator:a4a4e38b6930b3a37e7ab3142f1947b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed19fb54539f2ca4d32d4fd860671731" id="r_aed19fb54539f2ca4d32d4fd860671731"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#aed19fb54539f2ca4d32d4fd860671731">family</a> (const QString &amp;unit) const</td></tr>
-<tr class="memdesc:aed19fb54539f2ca4d32d4fd860671731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a family for a given unit.  <br /></td></tr>
-<tr class="separator:aed19fb54539f2ca4d32d4fd860671731"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a633ace812f42df386c61f092293649ae" id="r_a633ace812f42df386c61f092293649ae"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a633ace812f42df386c61f092293649ae">conversions</a> (const QString &amp;unit) const</td></tr>
-<tr class="memdesc:a633ace812f42df386c61f092293649ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list of units with a possible connection to/from a given unit.  <br /></td></tr>
-<tr class="separator:a633ace812f42df386c61f092293649ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3ecd2dee38824bc944bce79d3b2ed9c" id="r_af3ecd2dee38824bc944bce79d3b2ed9c"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#af3ecd2dee38824bc944bce79d3b2ed9c">units</a> (const QString &amp;<a class="el" href="class_q_unit_convertor.html#aed19fb54539f2ca4d32d4fd860671731">family</a>) const</td></tr>
-<tr class="memdesc:af3ecd2dee38824bc944bce79d3b2ed9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method provides access to a list of units in this convertor within a given family, effectively providing a list of unit with a possible conversion from any unit of this list to any other.  <br /></td></tr>
-<tr class="separator:af3ecd2dee38824bc944bce79d3b2ed9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af61d2acd19248d08fc1c925886e01873" id="r_af61d2acd19248d08fc1c925886e01873"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#af61d2acd19248d08fc1c925886e01873">setAliases</a> (<a class="el" href="class_q_alias_dictionary.html">QAliasDictionary</a>&lt; QString &gt; aliases)</td></tr>
-<tr class="memdesc:af61d2acd19248d08fc1c925886e01873"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds aliases from the object <a class="el" href="class_q_alias_dictionary.html" title="The QAliasDictionary class provides an alias dictionary to allow quick on-the-fly conversion of unit ...">QAliasDictionary</a>  <br /></td></tr>
-<tr class="separator:af61d2acd19248d08fc1c925886e01873"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4afbaf7b8e2313965480250157e2dbcb" id="r_a4afbaf7b8e2313965480250157e2dbcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a4afbaf7b8e2313965480250157e2dbcb">addAlias</a> (QString name, QString alias)</td></tr>
-<tr class="memdesc:a4afbaf7b8e2313965480250157e2dbcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds one alias  <br /></td></tr>
-<tr class="separator:a4afbaf7b8e2313965480250157e2dbcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae357bab051096d18a06465cd2aaae87d" id="r_ae357bab051096d18a06465cd2aaae87d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#ae357bab051096d18a06465cd2aaae87d">clearAliases</a> ()</td></tr>
-<tr class="memdesc:ae357bab051096d18a06465cd2aaae87d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all alias rules.  <br /></td></tr>
-<tr class="separator:ae357bab051096d18a06465cd2aaae87d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ee9a12820378e9aada3122663ff72bf" id="r_a5ee9a12820378e9aada3122663ff72bf"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a5ee9a12820378e9aada3122663ff72bf">unitName</a> (const QString &amp;alias) const</td></tr>
-<tr class="memdesc:a5ee9a12820378e9aada3122663ff72bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets unit name by alias using internal alias dictionary.  <br /></td></tr>
-<tr class="separator:a5ee9a12820378e9aada3122663ff72bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9b41711064e471d418d96664880ea1a" id="r_aa9b41711064e471d418d96664880ea1a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#aa9b41711064e471d418d96664880ea1a">canConvert</a> (const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;in, const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;out) const</td></tr>
+<tr class="memdesc:aa9b41711064e471d418d96664880ea1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if unit conversion from in unit to out unit is possible.  <br /></td></tr>
+<tr class="separator:aa9b41711064e471d418d96664880ea1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a816fae2fe8cc113e88ab550a40a2e6ac" id="r_a816fae2fe8cc113e88ab550a40a2e6ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_linear_function.html">QLinearFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a816fae2fe8cc113e88ab550a40a2e6ac">convert</a> (const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;in, const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;out) const</td></tr>
+<tr class="memdesc:a816fae2fe8cc113e88ab550a40a2e6ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts from in unit to out unit.  <br /></td></tr>
+<tr class="separator:a816fae2fe8cc113e88ab550a40a2e6ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abab0ae420b677435b7dbe9fd68256ed9" id="r_abab0ae420b677435b7dbe9fd68256ed9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#abab0ae420b677435b7dbe9fd68256ed9">convert</a> (double value, const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;in, const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;out, double defaultValue=NAN) const</td></tr>
+<tr class="memdesc:abab0ae420b677435b7dbe9fd68256ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a given value from in unit to out unit.  <br /></td></tr>
+<tr class="separator:abab0ae420b677435b7dbe9fd68256ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a403156f7e5ac50f9b6ef314a413edd70" id="r_a403156f7e5ac50f9b6ef314a413edd70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a403156f7e5ac50f9b6ef314a413edd70">addConversionRule</a> (const <a class="el" href="class_q_unit_conversion_rule.html">QUnitConversionRule</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; &amp;rule)</td></tr>
+<tr class="memdesc:a403156f7e5ac50f9b6ef314a413edd70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a conversion rule to convertor.  <br /></td></tr>
+<tr class="separator:a403156f7e5ac50f9b6ef314a413edd70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca72ed096316cf05d4c2ed759862571" id="r_aaca72ed096316cf05d4c2ed759862571"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#aaca72ed096316cf05d4c2ed759862571">clear</a> ()</td></tr>
+<tr class="memdesc:aaca72ed096316cf05d4c2ed759862571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears unit convertor removing all unit conversion rules.  <br /></td></tr>
+<tr class="separator:aaca72ed096316cf05d4c2ed759862571"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15352b8773ce9303ce10a90cbeef908a" id="r_a15352b8773ce9303ce10a90cbeef908a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a15352b8773ce9303ce10a90cbeef908a">families</a> () const</td></tr>
+<tr class="memdesc:a15352b8773ce9303ce10a90cbeef908a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method provides access to a list of families of units in this convertor.  <br /></td></tr>
+<tr class="separator:a15352b8773ce9303ce10a90cbeef908a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a173c36ebe331a381f23f6d0d38f001b2" id="r_a173c36ebe331a381f23f6d0d38f001b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a173c36ebe331a381f23f6d0d38f001b2">family</a> (const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;unit) const</td></tr>
+<tr class="memdesc:a173c36ebe331a381f23f6d0d38f001b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a family for a given unit.  <br /></td></tr>
+<tr class="separator:a173c36ebe331a381f23f6d0d38f001b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab48bf00c861b849cdb19494397c332af" id="r_ab48bf00c861b849cdb19494397c332af"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#ab48bf00c861b849cdb19494397c332af">conversions</a> (const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;unit) const</td></tr>
+<tr class="memdesc:ab48bf00c861b849cdb19494397c332af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list of units with a possible connection to/from a given unit.  <br /></td></tr>
+<tr class="separator:ab48bf00c861b849cdb19494397c332af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac9f82a045748ef60713bfb14d748da9" id="r_aac9f82a045748ef60713bfb14d748da9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#aac9f82a045748ef60713bfb14d748da9">units</a> (const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;<a class="el" href="class_q_unit_convertor.html#a173c36ebe331a381f23f6d0d38f001b2">family</a>) const</td></tr>
+<tr class="memdesc:aac9f82a045748ef60713bfb14d748da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method provides access to a list of units in this convertor within a given family, effectively providing a list of unit with a possible conversion from any unit of this list to any other.  <br /></td></tr>
+<tr class="separator:aac9f82a045748ef60713bfb14d748da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3675d44e74b3e57051f30e522d4e3aa" id="r_ac3675d44e74b3e57051f30e522d4e3aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#ac3675d44e74b3e57051f30e522d4e3aa">setAliases</a> (<a class="el" href="class_q_alias_dictionary.html">QAliasDictionary</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; aliases)</td></tr>
+<tr class="memdesc:ac3675d44e74b3e57051f30e522d4e3aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds aliases from the object <a class="el" href="class_q_alias_dictionary.html" title="The QAliasDictionary class provides an alias dictionary to allow quick on-the-fly conversion of unit ...">QAliasDictionary</a>  <br /></td></tr>
+<tr class="separator:ac3675d44e74b3e57051f30e522d4e3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee2e25d2c1a8f8022e167f0537c3bef7" id="r_aee2e25d2c1a8f8022e167f0537c3bef7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#aee2e25d2c1a8f8022e167f0537c3bef7">addAlias</a> (<a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> name, <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> alias)</td></tr>
+<tr class="memdesc:aee2e25d2c1a8f8022e167f0537c3bef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds one alias  <br /></td></tr>
+<tr class="separator:aee2e25d2c1a8f8022e167f0537c3bef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afca0c734ee25e4761ba4a0c576dd4435" id="r_afca0c734ee25e4761ba4a0c576dd4435"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#afca0c734ee25e4761ba4a0c576dd4435">clearAliases</a> ()</td></tr>
+<tr class="memdesc:afca0c734ee25e4761ba4a0c576dd4435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all alias rules.  <br /></td></tr>
+<tr class="separator:afca0c734ee25e4761ba4a0c576dd4435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a102f7e8d87f61c3eb8af8c9469e0e574" id="r_a102f7e8d87f61c3eb8af8c9469e0e574"><td class="memItemLeft" align="right" valign="top"><a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a102f7e8d87f61c3eb8af8c9469e0e574">unitName</a> (const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;alias) const</td></tr>
+<tr class="memdesc:a102f7e8d87f61c3eb8af8c9469e0e574"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets unit name by alias using internal alias dictionary.  <br /></td></tr>
+<tr class="separator:a102f7e8d87f61c3eb8af8c9469e0e574"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a5c535f352aff090e2f04123dc2c27fe6" id="r_a5c535f352aff090e2f04123dc2c27fe6"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a5c535f352aff090e2f04123dc2c27fe6">m_familiesByUnit</a></td></tr>
-<tr class="memdesc:a5c535f352aff090e2f04123dc2c27fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key is a unit, Value is a corresponding family. Base units are also put here.  <br /></td></tr>
-<tr class="separator:a5c535f352aff090e2f04123dc2c27fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a547b5d11a59757b5eed76b981c44b130" id="r_a547b5d11a59757b5eed76b981c44b130"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a547b5d11a59757b5eed76b981c44b130">m_baseUnitsByFamilies</a></td></tr>
-<tr class="memdesc:a547b5d11a59757b5eed76b981c44b130"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key is a family name, Value is a corresponding base unit.  <br /></td></tr>
-<tr class="separator:a547b5d11a59757b5eed76b981c44b130"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f394789592884c2908ae0099e63e41b" id="r_a7f394789592884c2908ae0099e63e41b"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, <a class="el" href="class_q_unit_conversion_family.html">QUnitConversionFamily</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a7f394789592884c2908ae0099e63e41b">m_families</a></td></tr>
-<tr class="memdesc:a7f394789592884c2908ae0099e63e41b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key is a family name, Value is a family.  <br /></td></tr>
-<tr class="separator:a7f394789592884c2908ae0099e63e41b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5c1ae1e934fbfa64ee1ed2d786f8aa1" id="r_af5c1ae1e934fbfa64ee1ed2d786f8aa1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_alias_dictionary.html">QAliasDictionary</a>&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#af5c1ae1e934fbfa64ee1ed2d786f8aa1">m_aliases</a></td></tr>
-<tr class="separator:af5c1ae1e934fbfa64ee1ed2d786f8aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8871b189b558352e94a1a83b5b19f09f" id="r_a8871b189b558352e94a1a83b5b19f09f"><td class="memItemLeft" align="right" valign="top">QMap&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a>, <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a8871b189b558352e94a1a83b5b19f09f">m_familiesByUnit</a></td></tr>
+<tr class="memdesc:a8871b189b558352e94a1a83b5b19f09f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key is a unit, Value is a corresponding family. Base units are also put here.  <br /></td></tr>
+<tr class="separator:a8871b189b558352e94a1a83b5b19f09f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dbe84f6c9159f16f9daae4d20e67e75" id="r_a3dbe84f6c9159f16f9daae4d20e67e75"><td class="memItemLeft" align="right" valign="top">QMap&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a>, <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a3dbe84f6c9159f16f9daae4d20e67e75">m_baseUnitsByFamilies</a></td></tr>
+<tr class="memdesc:a3dbe84f6c9159f16f9daae4d20e67e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key is a family name, Value is a corresponding base unit.  <br /></td></tr>
+<tr class="separator:a3dbe84f6c9159f16f9daae4d20e67e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac11367c4cf9fcd0eeb8ac2a5cb05d454" id="r_ac11367c4cf9fcd0eeb8ac2a5cb05d454"><td class="memItemLeft" align="right" valign="top">QMap&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a>, <a class="el" href="class_q_unit_conversion_family.html">QUnitConversionFamily</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#ac11367c4cf9fcd0eeb8ac2a5cb05d454">m_families</a></td></tr>
+<tr class="memdesc:ac11367c4cf9fcd0eeb8ac2a5cb05d454"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key is a family name, Value is a family.  <br /></td></tr>
+<tr class="separator:ac11367c4cf9fcd0eeb8ac2a5cb05d454"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8536d9086c05546e1ab9f5c2a0440a1b" id="r_a8536d9086c05546e1ab9f5c2a0440a1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_alias_dictionary.html">QAliasDictionary</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_unit_convertor.html#a8536d9086c05546e1ab9f5c2a0440a1b">m_aliases</a></td></tr>
+<tr class="separator:a8536d9086c05546e1ab9f5c2a0440a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -149,52 +146,30 @@ Friends</h2></td></tr>
 <tr class="separator:a1f407847a5b78799e02a4982d0340aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="class_q_unit_convertor.html" title="The QUnitConvertor class provides tool for converting units stored in a string form....">QUnitConvertor</a> class provides tool for converting units stored in a string form. It uses "base" unit for each "family" (length, speed etc) and perform conversions inside a family through conversion to and from base unit. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae1b74bed8a9b7330c0c72fa7bcefe90d" name="ae1b74bed8a9b7330c0c72fa7bcefe90d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1b74bed8a9b7330c0c72fa7bcefe90d">&#9670;&#160;</a></span>QUnitConvertor()</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a>&gt;<br />
+class QUnitConvertor&lt; String &gt;</div><p>The <a class="el" href="class_q_unit_convertor.html" title="The QUnitConvertor class provides tool for converting units stored in a string form....">QUnitConvertor</a> class provides tool for converting units stored in a string form. It uses "base" unit for each "family" (length, speed etc) and perform conversions inside a family through conversion to and from base unit. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aee2e25d2c1a8f8022e167f0537c3bef7" name="aee2e25d2c1a8f8022e167f0537c3bef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee2e25d2c1a8f8022e167f0537c3bef7">&#9670;&#160;</a></span>addAlias()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QUnitConvertor::QUnitConvertor </td>
+          <td class="memname">void <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::addAlias </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Default constructor. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4afbaf7b8e2313965480250157e2dbcb" name="a4afbaf7b8e2313965480250157e2dbcb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4afbaf7b8e2313965480250157e2dbcb">&#9670;&#160;</a></span>addAlias()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void QUnitConvertor::addAlias </td>
-          <td>(</td>
-          <td class="paramtype">QString&#160;</td>
+          <td class="paramtype"><a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a>&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString&#160;</td>
+          <td class="paramtype"><a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a>&#160;</td>
           <td class="paramname"><em>alias</em>&#160;</td>
         </tr>
         <tr>
@@ -203,26 +178,41 @@ Friends</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>adds one alias </p>
 
 </div>
 </div>
-<a id="a433f56e02b285daabedc08d4828e2edb" name="a433f56e02b285daabedc08d4828e2edb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a433f56e02b285daabedc08d4828e2edb">&#9670;&#160;</a></span>addConversionRule()</h2>
+<a id="a403156f7e5ac50f9b6ef314a413edd70" name="a403156f7e5ac50f9b6ef314a413edd70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a403156f7e5ac50f9b6ef314a413edd70">&#9670;&#160;</a></span>addConversionRule()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void QUnitConvertor::addConversionRule </td>
+          <td class="memname">void <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::addConversionRule </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_q_unit_conversion_rule.html">QUnitConversionRule</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_q_unit_conversion_rule.html">QUnitConversionRule</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>rule</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Adds a conversion rule to convertor. </p>
@@ -241,22 +231,27 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="ab07b3abe2694a1d05702f67771099aea" name="ab07b3abe2694a1d05702f67771099aea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab07b3abe2694a1d05702f67771099aea">&#9670;&#160;</a></span>canConvert()</h2>
+<a id="aa9b41711064e471d418d96664880ea1a" name="aa9b41711064e471d418d96664880ea1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9b41711064e471d418d96664880ea1a">&#9670;&#160;</a></span>canConvert()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool QUnitConvertor::canConvert </td>
+          <td class="memname">bool <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::canConvert </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;&#160;</td>
           <td class="paramname"><em>in</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;&#160;</td>
           <td class="paramname"><em>out</em>&#160;</td>
         </tr>
         <tr>
@@ -265,6 +260,11 @@ Friends</h2></td></tr>
           <td></td><td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Checks if unit conversion from in unit to out unit is possible. </p>
@@ -279,58 +279,88 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a8ea79b857b145dbf99cd360fe4138d8e" name="a8ea79b857b145dbf99cd360fe4138d8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ea79b857b145dbf99cd360fe4138d8e">&#9670;&#160;</a></span>clear()</h2>
+<a id="aaca72ed096316cf05d4c2ed759862571" name="aaca72ed096316cf05d4c2ed759862571"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaca72ed096316cf05d4c2ed759862571">&#9670;&#160;</a></span>clear()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void QUnitConvertor::clear </td>
+          <td class="memname">void <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::clear </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Clears unit convertor removing all unit conversion rules. </p>
 
 </div>
 </div>
-<a id="ae357bab051096d18a06465cd2aaae87d" name="ae357bab051096d18a06465cd2aaae87d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae357bab051096d18a06465cd2aaae87d">&#9670;&#160;</a></span>clearAliases()</h2>
+<a id="afca0c734ee25e4761ba4a0c576dd4435" name="afca0c734ee25e4761ba4a0c576dd4435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afca0c734ee25e4761ba4a0c576dd4435">&#9670;&#160;</a></span>clearAliases()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void QUnitConvertor::clearAliases </td>
+          <td class="memname">void <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::clearAliases </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Removes all alias rules. </p>
 
 </div>
 </div>
-<a id="a633ace812f42df386c61f092293649ae" name="a633ace812f42df386c61f092293649ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a633ace812f42df386c61f092293649ae">&#9670;&#160;</a></span>conversions()</h2>
+<a id="ab48bf00c861b849cdb19494397c332af" name="ab48bf00c861b849cdb19494397c332af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab48bf00c861b849cdb19494397c332af">&#9670;&#160;</a></span>conversions()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QStringList QUnitConvertor::conversions </td>
+          <td class="memname">std::vector&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::conversions </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;&#160;</td>
           <td class="paramname"><em>unit</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets a list of units with a possible connection to/from a given unit. </p>
@@ -340,26 +370,31 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>QStringList with units with possible conversion to a given unit, including a given unit. If conversion to/from a given unit is unknown returns an empty list </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>StringList with units with possible conversion to a given unit, including a given unit. If conversion to/from a given unit is unknown returns an empty list </dd></dl>
 
 </div>
 </div>
-<a id="a98b3edf83ef0f7742e6e14bcdba06ee3" name="a98b3edf83ef0f7742e6e14bcdba06ee3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98b3edf83ef0f7742e6e14bcdba06ee3">&#9670;&#160;</a></span>convert() <span class="overload">[1/2]</span></h2>
+<a id="a816fae2fe8cc113e88ab550a40a2e6ac" name="a816fae2fe8cc113e88ab550a40a2e6ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a816fae2fe8cc113e88ab550a40a2e6ac">&#9670;&#160;</a></span>convert() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_q_linear_function.html">QLinearFunction</a> QUnitConvertor::convert </td>
+          <td class="memname"><a class="el" href="class_q_linear_function.html">QLinearFunction</a> <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::convert </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;&#160;</td>
           <td class="paramname"><em>in</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;&#160;</td>
           <td class="paramname"><em>out</em>&#160;</td>
         </tr>
         <tr>
@@ -368,6 +403,11 @@ Friends</h2></td></tr>
           <td></td><td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Converts from in unit to out unit. </p>
@@ -382,14 +422,19 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="acb8f9a87f53cce10dbbadee7c7706cae" name="acb8f9a87f53cce10dbbadee7c7706cae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb8f9a87f53cce10dbbadee7c7706cae">&#9670;&#160;</a></span>convert() <span class="overload">[2/2]</span></h2>
+<a id="abab0ae420b677435b7dbe9fd68256ed9" name="abab0ae420b677435b7dbe9fd68256ed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abab0ae420b677435b7dbe9fd68256ed9">&#9670;&#160;</a></span>convert() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double QUnitConvertor::convert </td>
+          <td class="memname">double <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::convert </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>value</em>, </td>
@@ -397,13 +442,13 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;&#160;</td>
           <td class="paramname"><em>in</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;&#160;</td>
           <td class="paramname"><em>out</em>, </td>
         </tr>
         <tr>
@@ -418,6 +463,11 @@ Friends</h2></td></tr>
           <td></td><td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Converts a given value from in unit to out unit. </p>
@@ -435,40 +485,60 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a4a4e38b6930b3a37e7ab3142f1947b41" name="a4a4e38b6930b3a37e7ab3142f1947b41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a4e38b6930b3a37e7ab3142f1947b41">&#9670;&#160;</a></span>families()</h2>
+<a id="a15352b8773ce9303ce10a90cbeef908a" name="a15352b8773ce9303ce10a90cbeef908a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15352b8773ce9303ce10a90cbeef908a">&#9670;&#160;</a></span>families()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QStringList QUnitConvertor::families </td>
+          <td class="memname">std::vector&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::families </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Method provides access to a list of families of units in this convertor. </p>
-<dl class="section return"><dt>Returns</dt><dd>QStringList containing a list of unit families </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>StringList containing a list of unit families </dd></dl>
 
 </div>
 </div>
-<a id="aed19fb54539f2ca4d32d4fd860671731" name="aed19fb54539f2ca4d32d4fd860671731"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed19fb54539f2ca4d32d4fd860671731">&#9670;&#160;</a></span>family()</h2>
+<a id="a173c36ebe331a381f23f6d0d38f001b2" name="a173c36ebe331a381f23f6d0d38f001b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a173c36ebe331a381f23f6d0d38f001b2">&#9670;&#160;</a></span>family()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QString QUnitConvertor::family </td>
+          <td class="memname"><a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::family </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;&#160;</td>
           <td class="paramname"><em>unit</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets a family for a given unit. </p>
@@ -482,40 +552,60 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="af61d2acd19248d08fc1c925886e01873" name="af61d2acd19248d08fc1c925886e01873"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af61d2acd19248d08fc1c925886e01873">&#9670;&#160;</a></span>setAliases()</h2>
+<a id="ac3675d44e74b3e57051f30e522d4e3aa" name="ac3675d44e74b3e57051f30e522d4e3aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3675d44e74b3e57051f30e522d4e3aa">&#9670;&#160;</a></span>setAliases()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void QUnitConvertor::setAliases </td>
+          <td class="memname">void <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::setAliases </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_q_alias_dictionary.html">QAliasDictionary</a>&lt; QString &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="class_q_alias_dictionary.html">QAliasDictionary</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;&#160;</td>
           <td class="paramname"><em>aliases</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>adds aliases from the object <a class="el" href="class_q_alias_dictionary.html" title="The QAliasDictionary class provides an alias dictionary to allow quick on-the-fly conversion of unit ...">QAliasDictionary</a> </p>
 
 </div>
 </div>
-<a id="a5ee9a12820378e9aada3122663ff72bf" name="a5ee9a12820378e9aada3122663ff72bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ee9a12820378e9aada3122663ff72bf">&#9670;&#160;</a></span>unitName()</h2>
+<a id="a102f7e8d87f61c3eb8af8c9469e0e574" name="a102f7e8d87f61c3eb8af8c9469e0e574"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a102f7e8d87f61c3eb8af8c9469e0e574">&#9670;&#160;</a></span>unitName()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QString QUnitConvertor::unitName </td>
+          <td class="memname"><a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::unitName </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;&#160;</td>
           <td class="paramname"><em>alias</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets unit name by alias using internal alias dictionary. </p>
@@ -529,20 +619,30 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="af3ecd2dee38824bc944bce79d3b2ed9c" name="af3ecd2dee38824bc944bce79d3b2ed9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3ecd2dee38824bc944bce79d3b2ed9c">&#9670;&#160;</a></span>units()</h2>
+<a id="aac9f82a045748ef60713bfb14d748da9" name="aac9f82a045748ef60713bfb14d748da9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac9f82a045748ef60713bfb14d748da9">&#9670;&#160;</a></span>units()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QStringList QUnitConvertor::units </td>
+          <td class="memname">std::vector&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::units </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &amp;&#160;</td>
           <td class="paramname"><em>family</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Method provides access to a list of units in this convertor within a given family, effectively providing a list of unit with a possible conversion from any unit of this list to any other. </p>
@@ -552,7 +652,7 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>QStringList containing a list of units known by this unit convertor </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>StringList containing a list of units known by this unit convertor </dd></dl>
 
 </div>
 </div>
@@ -562,6 +662,8 @@ Friends</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -580,17 +682,19 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="af5c1ae1e934fbfa64ee1ed2d786f8aa1" name="af5c1ae1e934fbfa64ee1ed2d786f8aa1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5c1ae1e934fbfa64ee1ed2d786f8aa1">&#9670;&#160;</a></span>m_aliases</h2>
+<a id="a8536d9086c05546e1ab9f5c2a0440a1b" name="a8536d9086c05546e1ab9f5c2a0440a1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8536d9086c05546e1ab9f5c2a0440a1b">&#9670;&#160;</a></span>m_aliases</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_q_alias_dictionary.html">QAliasDictionary</a>&lt;QString&gt; QUnitConvertor::m_aliases</td>
+          <td class="memname"><a class="el" href="class_q_alias_dictionary.html">QAliasDictionary</a>&lt;<a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a>&gt; <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::m_aliases</td>
         </tr>
       </table>
   </td>
@@ -602,17 +706,19 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a547b5d11a59757b5eed76b981c44b130" name="a547b5d11a59757b5eed76b981c44b130"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a547b5d11a59757b5eed76b981c44b130">&#9670;&#160;</a></span>m_baseUnitsByFamilies</h2>
+<a id="a3dbe84f6c9159f16f9daae4d20e67e75" name="a3dbe84f6c9159f16f9daae4d20e67e75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dbe84f6c9159f16f9daae4d20e67e75">&#9670;&#160;</a></span>m_baseUnitsByFamilies</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QMap&lt;QString, QString&gt; QUnitConvertor::m_baseUnitsByFamilies</td>
+          <td class="memname">QMap&lt;<a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a>, <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a>&gt; <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::m_baseUnitsByFamilies</td>
         </tr>
       </table>
   </td>
@@ -626,17 +732,19 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a7f394789592884c2908ae0099e63e41b" name="a7f394789592884c2908ae0099e63e41b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f394789592884c2908ae0099e63e41b">&#9670;&#160;</a></span>m_families</h2>
+<a id="ac11367c4cf9fcd0eeb8ac2a5cb05d454" name="ac11367c4cf9fcd0eeb8ac2a5cb05d454"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac11367c4cf9fcd0eeb8ac2a5cb05d454">&#9670;&#160;</a></span>m_families</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QMap&lt;QString, <a class="el" href="class_q_unit_conversion_family.html">QUnitConversionFamily</a>&gt; QUnitConvertor::m_families</td>
+          <td class="memname">QMap&lt;<a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a>, <a class="el" href="class_q_unit_conversion_family.html">QUnitConversionFamily</a>&lt;<a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a>&gt; &gt; <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::m_families</td>
         </tr>
       </table>
   </td>
@@ -650,17 +758,19 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a5c535f352aff090e2f04123dc2c27fe6" name="a5c535f352aff090e2f04123dc2c27fe6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c535f352aff090e2f04123dc2c27fe6">&#9670;&#160;</a></span>m_familiesByUnit</h2>
+<a id="a8871b189b558352e94a1a83b5b19f09f" name="a8871b189b558352e94a1a83b5b19f09f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8871b189b558352e94a1a83b5b19f09f">&#9670;&#160;</a></span>m_familiesByUnit</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QMap&lt;QString, QString&gt; QUnitConvertor::m_familiesByUnit</td>
+          <td class="memname">QMap&lt;<a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a>, <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a>&gt; <a class="el" href="class_q_unit_convertor.html">QUnitConvertor</a>&lt; <a class="el" href="qunitconvertortests_8cpp.html#a7e8844ddd81ffe156357bc02de7788dd">String</a> &gt;::m_familiesByUnit</td>
         </tr>
       </table>
   </td>
@@ -674,9 +784,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>QUnitConversion/<a class="el" href="qunitconvertor_8h_source.html">qunitconvertor.h</a></li>
-<li>QUnitConversion/<a class="el" href="qunitconvertor_8cpp.html">qunitconvertor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
