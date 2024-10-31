@@ -21,7 +21,7 @@ Documentation is available [here](https://beardedbeaver.github.io/QUnitConversio
 ### Basic usage:
 
 ```cpp
-QUnitConvertor convertor;
+QUnitConvertor<QString> convertor;
 
 // fill the convertor instance with rules
 convertor.addConversionRule(QUnitConversionRule("length", "m", "km", 0.001, 0));
