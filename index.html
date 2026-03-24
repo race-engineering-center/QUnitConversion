@@ -90,26 +90,39 @@ $(function(){ initResizable(false); });
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
 <h1>Overview</h1>
-<p><code>QUnitConversion</code> is a simple lightweight library providing tools for runtime unit conversion built on top of Qt Framework.</p>
+<p><code>QUnitConversion</code> is a simple lightweight library providing tools for runtime unit conversion. Originally built for Qt, it now works with any string type — Qt dependency is optional. The library is tested with <code>std::string</code> and <code>QString</code>.</p>
 <p><code>QUnitConversion</code> stores units as strings grouped by "family" (for example length or temperature). Each family has its own base unit, conversion inside a family is performed by converting through base unit providing conversion from any unit to any other unit in a family.</p>
 <p>Note that each unit should have a unique name, as long as conversion is unit name-based.</p>
 <p><code>QUnitConversion</code> supports aliases for unit names, see aliases example below.</p>
-<h1>Documentation</h1>
-<p>Documentation is available <a href="https://beardedbeaver.github.io/QUnitConversion/index.html">here</a></p>
+<h1>Requirements</h1>
+<p>C++20 or later. Qt is not required unless you want to use <code>QString</code> as the string type.</p>
+<h1>Integration</h1>
+<p>The recommended way to integrate is via CMake <code>FetchContent</code></p>
+<div class="fragment"><div class="line">set(QUNITCONV_BUILD_TESTS OFF)</div>
+<div class="line">FetchContent_Declare(</div>
+<div class="line">    QUnitConversion</div>
+<div class="line">    GIT_REPOSITORY https://github.com/race-engineering-center/QUnitConversion.git</div>
+<div class="line">    GIT_TAG e42603f</div>
+<div class="line">)</div>
+<div class="line">FetchContent_MakeAvailable(QUnitConversion)</div>
+<div class="line"> </div>
+<div class="line">target_link_libraries(your_target PRIVATE QUnitConversion)</div>
+</div><!-- fragment --><h1>Documentation</h1>
+<p>Documentation is available <a href="https://race-engineering-center.github.io/QUnitConversion/index.html">here</a></p>
 <h1>Examples</h1>
 <h2>Basic usage:</h2>
 <div class="fragment"><div class="line">QUnitConvertor&lt;QString&gt; convertor;</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// fill the convertor instance with rules</span></div>
-<div class="line">convertor.addConversionRule(QUnitConversionRule(<span class="stringliteral">&quot;length&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>, <span class="stringliteral">&quot;km&quot;</span>, 0.001, 0));</div>
-<div class="line">convertor.addConversionRule(QUnitConversionRule(<span class="stringliteral">&quot;length&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>, <span class="stringliteral">&quot;cm&quot;</span>, 100, 0));</div>
+<div class="line">convertor.addConversionRule(QUnitConversionRule&lt;QString&gt;(<span class="stringliteral">&quot;length&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>, <span class="stringliteral">&quot;km&quot;</span>, 0.001, 0));</div>
+<div class="line">convertor.addConversionRule(QUnitConversionRule&lt;QString&gt;(<span class="stringliteral">&quot;length&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>, <span class="stringliteral">&quot;cm&quot;</span>, 100, 0));</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// you can convert a single value</span></div>
-<div class="line"><span class="keywordtype">double</span> km = convertor.convert(50, <span class="stringliteral">&quot;km&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>);   <span class="comment">// returns value of a 50 km converted to meters</span></div>
+<div class="line"><span class="keywordtype">double</span> m = convertor.convert(50, <span class="stringliteral">&quot;km&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>);   <span class="comment">// returns value of a 50 km converted to meters</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// or get a linear function that holds conversion from one unit to another</span></div>
 <div class="line"><span class="comment">// to apply this conversion to many numbers without finding a conversion each time </span></div>
-<div class="line">QLinearFunction convertFunction = convertor.convert(<span class="stringliteral">&quot;m&quot;</span>, <span class="stringliteral">&quot;km&quot;</span>);</div>
+<div class="line">QLinearFunction convertFunction = convertor.convert(<span class="stringliteral">&quot;km&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>);</div>
 <div class="line">std::vector&lt;double&gt; meters;</div>
 <div class="line"><span class="comment">// meters is filled here...</span></div>
 <div class="line">std::vector&lt;double&gt; kilometers;</div>
@@ -117,7 +130,17 @@ $(function(){ initResizable(false); });
 <div class="line">    kilometers.push_back(convertFunction.y(m));</div>
 </div><!-- fragment --><h2>Aliases:</h2>
 <p><code>QUnitConversion</code> supports aliases for units with possible conversion on the fly, so you km/h, kmph and kmh will be converted to m/s properly.</p>
-<div class="fragment"><div class="line">// TODO: add updated alias example</div>
+<div class="fragment"><div class="line">QUnitConvertor&lt;std::string&gt; convertor;</div>
+<div class="line">convertor.addConversionRule(QUnitConversionRule&lt;std::string&gt;(<span class="stringliteral">&quot;speed&quot;</span>, <span class="stringliteral">&quot;m/s&quot;</span>, <span class="stringliteral">&quot;km/h&quot;</span>, 3.6, 0));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// register alternative names for &quot;km/h&quot;</span></div>
+<div class="line">convertor.addAlias(<span class="stringliteral">&quot;km/h&quot;</span>, <span class="stringliteral">&quot;kmph&quot;</span>);</div>
+<div class="line">convertor.addAlias(<span class="stringliteral">&quot;km/h&quot;</span>, <span class="stringliteral">&quot;kmh&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// all three refer to the same unit</span></div>
+<div class="line"><span class="keywordtype">double</span> a = convertor.convert(10, <span class="stringliteral">&quot;m/s&quot;</span>, <span class="stringliteral">&quot;km/h&quot;</span>);   <span class="comment">// 36</span></div>
+<div class="line"><span class="keywordtype">double</span> b = convertor.convert(10, <span class="stringliteral">&quot;m/s&quot;</span>, <span class="stringliteral">&quot;kmph&quot;</span>);   <span class="comment">// 36</span></div>
+<div class="line"><span class="keywordtype">double</span> c = convertor.convert(10, <span class="stringliteral">&quot;m/s&quot;</span>, <span class="stringliteral">&quot;kmh&quot;</span>);    <span class="comment">// 36</span></div>
 </div><!-- fragment --><h1>License</h1>
 <p><code>QUnitConversion</code> is distributed under MIT license</p>
 <p>Copyright Dmitriy Linev 2020-2026 </p>
