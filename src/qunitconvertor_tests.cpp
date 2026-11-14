@@ -165,3 +165,23 @@ TYPED_TEST(QUnitConvertorTest, AddAlias)
     ASSERT_TRUE(convertor.canConvert("km", "meters"));
 }
 
+TYPED_TEST(QUnitConvertorTest, ConvertAliasToSameUnit)
+{
+    QUnitConvertor<TypeParam> convertor;
+    convertor.addConversionRule(QUnitConversionRule<TypeParam>("length", "m", "km", 0.001, 0));
+    convertor.addAlias("m", "meter");
+    convertor.addAlias("m", "meters");
+    convertor.addAlias("km", "kilometer");
+
+    // Alias and its unit name the same unit, so the conversion is identity
+    ASSERT_TRUE(convertor.canConvert("meter", "m"));
+    ASSERT_TRUE(convertor.canConvert("m", "meter"));
+    ASSERT_TRUE(convertor.canConvert("meter", "meters"));
+    ASSERT_TRUE(convertor.canConvert("kilometer", "km"));
+
+    ASSERT_NEAR(convertor.convert(500, "meter", "m"), 500, 1e-10);
+    ASSERT_NEAR(convertor.convert(500, "m", "meter"), 500, 1e-10);
+    ASSERT_NEAR(convertor.convert(500, "meter", "meters"), 500, 1e-10);
+    ASSERT_NEAR(convertor.convert(500, "kilometer", "km"), 500, 1e-10);
+}
+
