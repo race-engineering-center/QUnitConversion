@@ -7,7 +7,7 @@
 #include <vector>
 
 #include "qlinearfunction.h"
-#include "qunitconversionfamily.h"
+#include "qunitconversionrule.h"
 #include "qaliasdictionary.h"
 
 /**
@@ -53,7 +53,7 @@ public:
             return {};
         if (itIn->second != itOut->second)
             return {};
-        return m_families.at(itIn->second).convert(actualIn, actualOut);
+        return QLinearFunction::combined(fromBase(actualIn).inverted(), fromBase(actualOut));
     }
 
     /**
@@ -78,8 +78,8 @@ public:
      * @param rule rule to add
      * @details This function doesn't convert an alias for a unit to an actual unit name, so make sure to
      * pass here an actual unit name
-     * @throw std::invalid_argument if a passed rule has existing family with different base unit,
-     * existing unit with different family or existing unit with a different family or base unit
+     * @throw std::invalid_argument if the rule's family has a different base unit, or its unit
+     * or base unit belongs to another family
      */
     void addConversionRule(const QUnitConversionRule<String> & rule)
     {
@@ -92,19 +92,11 @@ public:
         auto itUnit = m_familiesByUnit.find(rule.unit());
         if (itUnit != m_familiesByUnit.end() && itUnit->second != rule.family())
             throw std::invalid_argument("Incorrect rule added: incorrect unit family");
-        if (m_families.find(rule.family()) == m_families.end())
-        {
-            QUnitConversionFamily<String> family;
-            family.addConversionRule(rule);
-            m_families.emplace(rule.family(), std::move(family));
-            m_baseUnitsByFamilies[rule.family()] = rule.baseUnit();
-            m_familiesByUnit[rule.baseUnit()]    = rule.family();
-        }
-        else
-        {
-            m_families[rule.family()].addConversionRule(rule);
-        }
+        // TODO: reject a rule with base -> base conversion
+        m_baseUnitsByFamilies[rule.family()] = rule.baseUnit();
+        m_familiesByUnit[rule.baseUnit()] = rule.family();
         m_familiesByUnit[rule.unit()] = rule.family();
+        m_baseToUnit.insert_or_assign(rule.unit(), rule.convertFunction());
     }
 
     /**
@@ -112,9 +104,9 @@ public:
      */
     void clear()
     {
-        m_families.clear();
         m_familiesByUnit.clear();
         m_baseUnitsByFamilies.clear();
+        m_baseToUnit.clear();
     }
 
     /**
@@ -124,8 +116,8 @@ public:
     std::vector<String> families() const
     {
         std::vector<String> result;
-        result.reserve(m_families.size());
-        for (const auto & [name, _] : m_families)
+        result.reserve(m_baseUnitsByFamilies.size());
+        for (const auto & [name, _] : m_baseUnitsByFamilies)
             result.push_back(name);
         return result;
     }
@@ -219,9 +211,22 @@ public:
     }
 
 protected:
+    /**
+     * @brief Gets a conversion from the family base unit to a given unit
+     * @param unit actual unit name known to the convertor
+     * @return conversion function, identity for a base unit
+     */
+    QLinearFunction fromBase(const String & unit) const
+    {
+        auto it = m_baseToUnit.find(unit);
+        if (it == m_baseToUnit.end())
+            return {1, 0};
+        return it->second;
+    }
+
     std::map<String, String> m_familiesByUnit;          ///< Key is a unit, Value is a corresponding family. Base units are also put here
     std::map<String, String> m_baseUnitsByFamilies;     ///< Key is a family name, Value is a corresponding base unit
-    std::map<String, QUnitConversionFamily<String>> m_families;   ///< Key is a family name, Value is a family
+    std::map<String, QLinearFunction> m_baseToUnit;     ///< Key is a non-base unit, Value is a conversion from its family base unit to it
     QAliasDictionary<String> m_aliases;
 };
 

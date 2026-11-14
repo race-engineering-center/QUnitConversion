@@ -11,7 +11,6 @@ set(SOURCES
 set(HEADERS
     src/qaliasdictionary.h
     src/qlinearfunction.h
-    src/qunitconversionfamily.h
     src/qunitconversionrule.h
     src/qunitconvertor.h
 )
