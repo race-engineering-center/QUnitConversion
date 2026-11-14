@@ -43,10 +43,10 @@ public:
      */
     QLinearFunction convert(const String & in, const String & out) const
     {
-        if (in == out)
-            return {1, 0};
         String actualIn  = m_aliases.contains(in)  ? m_aliases.name(in)  : in;
         String actualOut = m_aliases.contains(out) ? m_aliases.name(out) : out;
+        if (actualIn == actualOut)
+            return {1, 0};
         auto itIn  = m_familiesByUnit.find(actualIn);
         auto itOut = m_familiesByUnit.find(actualOut);
         if (itIn == m_familiesByUnit.end() || itOut == m_familiesByUnit.end())
